@@ -136,11 +136,15 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/StickerFromYAML/StickerFromYAML.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/StickerFromYAML/StickerFromYAML.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

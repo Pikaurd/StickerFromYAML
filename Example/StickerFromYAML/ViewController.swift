@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import StickerFromYAML
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let stickerView = StickerContainer()
+        stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 300, height: 300))
+        stickerView.center = view.center
+        view.addSubview(stickerView)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

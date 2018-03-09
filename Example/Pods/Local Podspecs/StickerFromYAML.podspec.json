@@ -3,16 +3,14 @@
   "version": "0.1.0",
   "summary": "A short description of StickerFromYAML.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Chen Hao/StickerFromYAML",
+  "homepage": "https://github.com/pikaurd/StickerFromYAML",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
-  "authors": {
-    "Chen Hao": "hao.chen@thel.co"
-  },
+  "authors": "Rela",
   "source": {
-    "git": "https://github.com/Chen Hao/StickerFromYAML.git",
+    "git": "https://github.com/pikaurd/StickerFromYAML.git",
     "tag": "0.1.0"
   },
   "platforms": {
@@ -24,6 +22,9 @@
 
     ],
     "Yaml": [
+
+    ],
+    "YogaKit": [
 
     ]
   }

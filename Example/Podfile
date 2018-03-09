@@ -3,10 +3,12 @@ use_frameworks!
 
 target 'StickerFromYAML_Example' do
   pod 'StickerFromYAML', :path => '../'
+  pod 'Yaml'
 
   target 'StickerFromYAML_Tests' do
     inherit! :search_paths
 
+    pod 'Yaml'
     pod 'Quick', '~> 1.2.0'
     pod 'Nimble', '~> 7.0.2'
     pod 'FBSnapshotTestCase' , '~> 2.1.4'

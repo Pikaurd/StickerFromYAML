@@ -15,7 +15,11 @@ PODS:
   - StickerFromYAML (0.1.0):
     - lottie-ios
     - Yaml
+    - YogaKit
   - Yaml (3.4.2)
+  - Yoga (1.6.0)
+  - YogaKit (1.6.0):
+    - Yoga (~> 1.6)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
@@ -23,6 +27,7 @@ DEPENDENCIES:
   - Nimble-Snapshots (~> 6.3.0)
   - Quick (~> 1.2.0)
   - StickerFromYAML (from `../`)
+  - Yaml
 
 EXTERNAL SOURCES:
   StickerFromYAML:
@@ -34,9 +39,11 @@ SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  StickerFromYAML: b072b423ced25dbedeeab15fe9ee12003563be7e
+  StickerFromYAML: afc7f45d43121e677b4edc7b6b03b5c3e75b1c32
   Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
+  Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
+  YogaKit: 8fe0ddd21673226c0b6077fc3ad5c8fa6cda722e
 
-PODFILE CHECKSUM: dcf12ed60b495510c1f59b07f162f3030afd8aa1
+PODFILE CHECKSUM: 7f17c009428fdb2ab06e651c7e06148c44aac877
 
 COCOAPODS: 1.4.0

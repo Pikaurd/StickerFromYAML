@@ -11,6 +11,7 @@
 		01B7A57820528A62000DB517 /* snowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57620528A62000DB517 /* snowing.json */; };
 		01B7A57920528ABC000DB517 /* snowing.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57520528A62000DB517 /* snowing.yaml */; };
 		01B7A57A20528ABC000DB517 /* snowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57620528A62000DB517 /* snowing.json */; };
+		01B7A57E20528D7E000DB517 /* TestReadYaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7A57D20528D7E000DB517 /* TestReadYaml.swift */; };
 		0267C44CA5F678BDB05AB21A /* Pods_StickerFromYAML_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FAD5237D6536048B826EA4 /* Pods_StickerFromYAML_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		01B7A57520528A62000DB517 /* snowing.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snowing.yaml; sourceTree = "<group>"; };
 		01B7A57620528A62000DB517 /* snowing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowing.json; sourceTree = "<group>"; };
+		01B7A57D20528D7E000DB517 /* TestReadYaml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReadYaml.swift; sourceTree = "<group>"; };
 		2B5811EF182D55B2A7031889 /* StickerFromYAML.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StickerFromYAML.podspec; path = ../StickerFromYAML.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3E2AD877B9D9EBEF6791A016 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		453BB5E49095357F935F3AE8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				01B7A57D20528D7E000DB517 /* TestReadYaml.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -309,6 +312,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StickerFromYAML_Tests/Pods-StickerFromYAML_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
@@ -316,6 +320,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Yaml.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
@@ -365,12 +370,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StickerFromYAML_Example/Pods-StickerFromYAML_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/StickerFromYAML/StickerFromYAML.framework",
 				"${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
+				"${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StickerFromYAML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Yaml.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YogaKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B7A57E20528D7E000DB517 /* TestReadYaml.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

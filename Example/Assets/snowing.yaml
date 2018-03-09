@@ -1,0 +1,24 @@
+%YAML 1.2
+---
+name: animation name
+assets: snowing.json
+
+animation container: 
+  layout:
+    up: 0
+    left: 0
+    right: 0
+    down: 0
+
+label container: 
+  layout:
+    up: 0
+    left: 0
+    right: 0
+    down: 0
+
+  labels:
+    - 0 
+    - 1 
+    - 2 
+...

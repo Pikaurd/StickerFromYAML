@@ -1,0 +1,6 @@
+framework module StickerFromYAML {
+  umbrella header "StickerFromYAML-umbrella.h"
+
+  export *
+  module * { export * }
+}

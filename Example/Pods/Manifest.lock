@@ -1,0 +1,42 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - lottie-ios (2.5.0)
+  - Nimble (7.0.3)
+  - Nimble-Snapshots (6.3.0):
+    - Nimble-Snapshots/Core (= 6.3.0)
+  - Nimble-Snapshots/Core (6.3.0):
+    - FBSnapshotTestCase (~> 2.0)
+    - Nimble (~> 7.0)
+  - Quick (1.2.0)
+  - StickerFromYAML (0.1.0):
+    - lottie-ios
+    - Yaml
+  - Yaml (3.4.2)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase (~> 2.1.4)
+  - Nimble (~> 7.0.2)
+  - Nimble-Snapshots (~> 6.3.0)
+  - Quick (~> 1.2.0)
+  - StickerFromYAML (from `../`)
+
+EXTERNAL SOURCES:
+  StickerFromYAML:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  StickerFromYAML: b072b423ced25dbedeeab15fe9ee12003563be7e
+  Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
+
+PODFILE CHECKSUM: dcf12ed60b495510c1f59b07f162f3030afd8aa1
+
+COCOAPODS: 1.4.0

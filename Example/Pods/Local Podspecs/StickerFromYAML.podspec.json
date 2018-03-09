@@ -1,0 +1,30 @@
+{
+  "name": "StickerFromYAML",
+  "version": "0.1.0",
+  "summary": "A short description of StickerFromYAML.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Chen Hao/StickerFromYAML",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Chen Hao": "hao.chen@thel.co"
+  },
+  "source": {
+    "git": "https://github.com/Chen Hao/StickerFromYAML.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "StickerFromYAML/Classes/**/*",
+  "dependencies": {
+    "lottie-ios": [
+
+    ],
+    "Yaml": [
+
+    ]
+  }
+}

@@ -9,11 +9,25 @@ import UIKit
 import Lottie
 
 class AnimationContainerView: GridContainerView {
-
-    override func generateCenterView() -> UIView {
-        let lotView = LOTAnimationView()
-        lotView.contentMode = .scaleAspectFit
-        return lotView
+    
+    var lottieView = LOTAnimationView()
+    
+    func replaceAnimation(animationUrl: URL) -> () {
+        lottieView.removeFromSuperview()
+        lottieView = LOTAnimationView(contentsOf: animationUrl)
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopAnimation = true
+        
+        lottieView.configureLayout { layout in
+            layout.isEnabled = true
+            layout.flexGrow = 1
+        }
+        
+        centerView.addSubview(lottieView)
+        
+        yoga.applyLayout(preservingOrigin: true)
+        
+        lottieView.backgroundColor = .green
     }
 
 }

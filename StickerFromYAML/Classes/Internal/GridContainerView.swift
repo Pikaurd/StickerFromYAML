@@ -15,22 +15,28 @@ class GridContainerView: UIView {
     let bottomContainerView = UIView()
     
     let leftMarginView = UIView()
-    var centerView: UIView!
+    var centerView = UIView()
     let rightMarginView = UIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        setupYoga(layout: Layout(left: 100, up: 100, right: 100, down: 100))
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+        setupYoga(layout: Layout(left: 100, up: 100, right: 100, down: 100))
+    }
+    
+    init(frame: CGRect, layout: Layout) {
+        super.init(frame: frame)
+        setup()
+        setupYoga(layout: layout)
     }
     
     private func setup() -> () {
-        centerView = generateCenterView()
-        
         addSubview(topContainerView)
         addSubview(middleContainerView)
         addSubview(bottomContainerView)
@@ -41,26 +47,38 @@ class GridContainerView: UIView {
         
         configureLayout { layout in
             layout.isEnabled = true
+            layout.flexGrow = 100
         }
-        
-        setupYoga()
+
     }
 
-    func setupYoga() -> () {
+    func setupYoga(layout: Layout) -> () {
         // setup containers
-        topContainerView.configureLayout(block: containerYogaSetup())
-        middleContainerView.configureLayout(block: containerYogaSetup())
-        bottomContainerView.configureLayout(block: containerYogaSetup())
+        topContainerView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.up))
+        middleContainerView.configureLayout(block: GridContainerView.containerYogaSetup(flex: 100))
+        bottomContainerView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.down))
         
-        leftMarginView.configureLayout(block: containerYogaSetup())
-        centerView.configureLayout(block: containerYogaSetup())
-        rightMarginView.configureLayout(block: containerYogaSetup())
-    }
-    
-    private func containerYogaSetup() -> YGLayoutConfigurationBlock {
-        return { layout in
+        leftMarginView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.left))
+        centerView.configureLayout { layout in
             layout.isEnabled = true
             layout.flexGrow = 100
+            layout.justifyContent = YGJustify.spaceAround
+            layout.flexDirection = YGFlexDirection.column
+        }
+        rightMarginView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.right))
+        
+        topContainerView.backgroundColor = .purple
+        middleContainerView.backgroundColor = .lightGray
+        bottomContainerView.backgroundColor = .orange
+        
+        leftMarginView.backgroundColor = .yellow
+        rightMarginView.backgroundColor = .blue
+    }
+    
+    static func containerYogaSetup(flex: CGFloat) -> YGLayoutConfigurationBlock {
+        return { layout in
+            layout.isEnabled = true
+            layout.flexGrow = flex
             layout.flexDirection = YGFlexDirection.row
         }
     }
@@ -69,9 +87,5 @@ class GridContainerView: UIView {
         super.layoutSubviews()
         yoga.applyLayout(preservingOrigin: false)
     }
-    
-    func generateCenterView() -> UIView {
-        return UIView()
-    }
-    
+
 }

@@ -5,17 +5,17 @@ assets: snowing.json
 
 animation container: 
   layout:
-    up: 0
-    left: 0
-    right: 0
-    down: 0
+    up: 50
+    left: 50
+    right: 100
+    down: 100
 
 label container: 
   layout:
-    up: 0
-    left: 0
-    right: 0
-    down: 0
+    up: 100
+    left: 100
+    right: 100
+    down: 100
 
   labels:
     - 0 

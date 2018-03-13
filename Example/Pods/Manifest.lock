@@ -12,8 +12,10 @@ PODS:
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
   - Quick (1.2.0)
+  - SnapKit (4.0.0)
   - StickerFromYAML (0.1.0):
     - lottie-ios
+    - SnapKit
     - Yaml
     - YogaKit
   - Yaml (3.4.2)
@@ -39,7 +41,8 @@ SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  StickerFromYAML: afc7f45d43121e677b4edc7b6b03b5c3e75b1c32
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  StickerFromYAML: 29aa266fec1d26461edefe6d0de60432475172ad
   Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
   Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
   YogaKit: 8fe0ddd21673226c0b6077fc3ad5c8fa6cda722e

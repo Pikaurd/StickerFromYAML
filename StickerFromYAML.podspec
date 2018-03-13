@@ -35,6 +35,7 @@ TODO: Add long description of the pod here.
   s.dependency 'lottie-ios'
   s.dependency 'Yaml'
   s.dependency 'YogaKit'
+  s.dependency 'SnapKit'
   
   # s.resource_bundles = {
   #   'StickerFromYAML' => ['StickerFromYAML/Assets/*.png']

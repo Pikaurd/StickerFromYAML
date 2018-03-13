@@ -17,17 +17,10 @@ class AnimationContainerView: GridContainerView {
         lottieView = LOTAnimationView(contentsOf: animationUrl)
         lottieView.contentMode = .scaleAspectFit
         lottieView.loopAnimation = true
-        
-        lottieView.configureLayout { layout in
-            layout.isEnabled = true
-            layout.flexGrow = 1
-        }
+        lottieView.frame = centerView.bounds
+        lottieView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         centerView.addSubview(lottieView)
-        
-        yoga.applyLayout(preservingOrigin: true)
-        
-        lottieView.backgroundColor = .green
     }
 
 }

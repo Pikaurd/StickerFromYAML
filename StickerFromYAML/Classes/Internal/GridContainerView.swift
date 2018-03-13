@@ -63,16 +63,17 @@ class GridContainerView: UIView {
             layout.isEnabled = true
             layout.flexGrow = 100
             layout.justifyContent = YGJustify.spaceAround
-            layout.flexDirection = YGFlexDirection.column
+//            layout.flexDirection = YGFlexDirection.column
+//            layout.alignItems = YGAlign.center
         }
         rightMarginView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.right))
         
-        topContainerView.backgroundColor = .purple
-        middleContainerView.backgroundColor = .lightGray
-        bottomContainerView.backgroundColor = .orange
-        
-        leftMarginView.backgroundColor = .yellow
-        rightMarginView.backgroundColor = .blue
+//        topContainerView.backgroundColor = .purple
+//        middleContainerView.backgroundColor = .lightGray
+//        bottomContainerView.backgroundColor = .orange
+//
+//        leftMarginView.backgroundColor = .yellow
+//        rightMarginView.backgroundColor = .blue
     }
     
     static func containerYogaSetup(flex: CGFloat) -> YGLayoutConfigurationBlock {

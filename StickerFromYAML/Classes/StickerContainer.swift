@@ -56,7 +56,7 @@ public class StickerContainer: UIView {
         lottieContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         labelContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-//        addSubview(lottieContainer)
+        addSubview(lottieContainer)
         addSubview(labelContainer)
         
         layer.borderWidth = 1.0

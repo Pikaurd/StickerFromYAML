@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StickerFromYAML'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of StickerFromYAML.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Yaml'
   s.dependency 'YogaKit'
   s.dependency 'SnapKit'
+  s.dependency 'SDWebImage/GIF'
   
   # s.resource_bundles = {
   #   'StickerFromYAML' => ['StickerFromYAML/Assets/*.png']

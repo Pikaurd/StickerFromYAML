@@ -40,7 +40,7 @@ public class StickerContainer: UIView {
         let labelLayout = Layout.fromYaml(v: yaml["label container"]["layout"])!
         
         setup(animationLayout: animationLayout, labelLayout: labelLayout)
-        
+        lottieContainer.replaceAnimation(animationUrl: animationUrl)
     }
     
     private func setup(animationLayout: Layout = Layout.zero(), labelLayout: Layout = Layout.zero()) -> () {

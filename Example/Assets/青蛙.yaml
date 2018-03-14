@@ -1,0 +1,24 @@
+%YAML 1.2
+---
+name: 青蛙
+
+animation container: 
+  layout:
+    up: 0
+    left: 0
+    right: 50
+    down: 0
+
+label container: 
+  layout:
+    up: 100
+    left: 100
+    right: 0
+    down: 24
+
+  labels:
+    -  
+    - line 1 
+    - line 2 
+    -  
+...

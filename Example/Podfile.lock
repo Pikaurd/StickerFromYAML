@@ -4,6 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - FLAnimatedImage (1.0.12)
   - lottie-ios (2.5.0)
   - Nimble (7.0.3)
   - Nimble-Snapshots (6.3.0):
@@ -12,9 +13,14 @@ PODS:
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
   - Quick (1.2.0)
+  - SDWebImage/Core (4.3.2)
+  - SDWebImage/GIF (4.3.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - SnapKit (4.0.0)
   - StickerFromYAML (0.1.0):
     - lottie-ios
+    - SDWebImage/GIF
     - SnapKit
     - Yaml
     - YogaKit
@@ -37,12 +43,14 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  StickerFromYAML: 29aa266fec1d26461edefe6d0de60432475172ad
+  StickerFromYAML: 918db02be0a75b06c6cf903bde25d58225a14c9e
   Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
   Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
   YogaKit: 8fe0ddd21673226c0b6077fc3ad5c8fa6cda722e

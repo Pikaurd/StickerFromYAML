@@ -36,7 +36,7 @@ class GridContainerView: UIView {
         setupYoga(layout: layout)
     }
     
-    private func setup() -> () {
+    func setup() -> () {
         addSubview(topContainerView)
         addSubview(middleContainerView)
         addSubview(bottomContainerView)

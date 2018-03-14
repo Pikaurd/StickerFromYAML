@@ -12,6 +12,9 @@
 		01B7A57920528ABC000DB517 /* snowing.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57520528A62000DB517 /* snowing.yaml */; };
 		01B7A57A20528ABC000DB517 /* snowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57620528A62000DB517 /* snowing.json */; };
 		01B7A57E20528D7E000DB517 /* TestReadYaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7A57D20528D7E000DB517 /* TestReadYaml.swift */; };
+		01E2ED0D2058F9B000C03BBC /* 雪人完成.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */; };
+		01F1BBF82058D8DB00E76EA0 /* 青蛙.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */; };
+		01F1BBF92058D8DB00E76EA0 /* 青蛙.json in Resources */ = {isa = PBXBuildFile; fileRef = 01F1BBF72058D8DB00E76EA0 /* 青蛙.json */; };
 		0267C44CA5F678BDB05AB21A /* Pods_StickerFromYAML_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FAD5237D6536048B826EA4 /* Pods_StickerFromYAML_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 		01B7A57520528A62000DB517 /* snowing.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snowing.yaml; sourceTree = "<group>"; };
 		01B7A57620528A62000DB517 /* snowing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowing.json; sourceTree = "<group>"; };
 		01B7A57D20528D7E000DB517 /* TestReadYaml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReadYaml.swift; sourceTree = "<group>"; };
+		01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "雪人完成.gif"; sourceTree = "<group>"; };
+		01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "青蛙.yaml"; sourceTree = "<group>"; };
+		01F1BBF72058D8DB00E76EA0 /* 青蛙.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "青蛙.json"; sourceTree = "<group>"; };
 		2B5811EF182D55B2A7031889 /* StickerFromYAML.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StickerFromYAML.podspec; path = ../StickerFromYAML.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3E2AD877B9D9EBEF6791A016 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		453BB5E49095357F935F3AE8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 		01B7A57420528A62000DB517 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */,
+				01F1BBF72058D8DB00E76EA0 /* 青蛙.json */,
+				01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */,
 				01B7A57520528A62000DB517 /* snowing.yaml */,
 				01B7A57620528A62000DB517 /* snowing.json */,
 			);
@@ -270,6 +279,9 @@
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				01B7A57720528A62000DB517 /* snowing.yaml in Resources */,
+				01F1BBF82058D8DB00E76EA0 /* 青蛙.yaml in Resources */,
+				01E2ED0D2058F9B000C03BBC /* 雪人完成.gif in Resources */,
+				01F1BBF92058D8DB00E76EA0 /* 青蛙.json in Resources */,
 				01B7A57820528A62000DB517 /* snowing.json in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -368,6 +380,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StickerFromYAML_Example/Pods-StickerFromYAML_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/StickerFromYAML/StickerFromYAML.framework",
 				"${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework",
@@ -377,6 +391,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StickerFromYAML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Yaml.framework",

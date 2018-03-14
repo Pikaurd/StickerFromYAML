@@ -17,11 +17,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let url = Bundle.main.url(forResource: "snowing", withExtension: "json")!
-        let yamlURL = Bundle.main.url(forResource: "snowing", withExtension: "yaml")!
+        let url = Bundle.main.url(forResource: "雪人完成", withExtension: "gif")!
+        let yamlURL = Bundle.main.url(forResource: "青蛙", withExtension: "yaml")!
         
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL)
-        stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 200, height: 200))
+        stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 300, height: 300))
         stickerView.center = view.center
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
@@ -31,8 +31,6 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let url = Bundle.main.url(forResource: "snowing", withExtension: "json")!
-        stickerView.loadLottie(url: url)
         stickerView.lottieView.play()
     }
 

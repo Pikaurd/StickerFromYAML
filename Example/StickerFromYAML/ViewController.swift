@@ -17,12 +17,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let url = Bundle.main.url(forResource: "雪人完成", withExtension: "gif")!
-        let yamlURL = Bundle.main.url(forResource: "青蛙", withExtension: "yaml")!
+        let url = Bundle.main.url(forResource: "雨天青蛙", withExtension: "webp")!
+        let yamlURL = Bundle.main.url(forResource: "snowing", withExtension: "yaml")!
         
-        stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL)
+        stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, interpreter: InterpreterProvider.default)
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 300, height: 300))
-        stickerView.center = view.center
+        stickerView.center = CGPoint(x: view.center.x, y: view.center.y)
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
         
@@ -39,9 +39,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
         
         DispatchQueue.main.async {
-            UIView.animate(withDuration: 1.0, animations: {
-                self.stickerView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            })
+//            UIView.animate(withDuration: 1.0, animations: {
+//                self.stickerView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+//            })
+            self.view.addSubview(self.stickerView.getLabelView())
         }
     }
 

@@ -8,6 +8,7 @@
 import UIKit
 import Lottie
 import Yaml
+import JavaScriptCore
 
 
 public class StickerContainer: UIView {
@@ -28,7 +29,7 @@ public class StickerContainer: UIView {
         setup()
     }
     
-    public init(animationUrl: URL, configUrl: URL) {
+    public init(animationUrl: URL, configUrl: URL, interpreter: ExpressionInterpreter? = .none) {
         super.init(frame: .zero)
         
         let yamlString = try! String(contentsOf: configUrl)
@@ -39,13 +40,13 @@ public class StickerContainer: UIView {
         let animationLayout = Layout.fromYaml(v: yaml["animation container"]["layout"])!
         let labelLayout = Layout.fromYaml(v: yaml["label container"]["layout"])!
         
-        setup(animationLayout: animationLayout, labelLayout: labelLayout)
+        setup(animationLayout: animationLayout, labelLayout: labelLayout, interpreter: interpreter)
         lottieContainer.replaceAnimation(animationUrl: animationUrl)
     }
     
-    private func setup(animationLayout: Layout = Layout.zero(), labelLayout: Layout = Layout.zero()) -> () {
+    private func setup(animationLayout: Layout = Layout.zero(), labelLayout: Layout = Layout.zero(), interpreter: ExpressionInterpreter? = .none) -> () {
         lottieContainer = AnimationContainerView(frame: frame, layout: animationLayout)
-        labelContainer = LabelContainerView(frame: frame, layout: labelLayout)
+        labelContainer = LabelContainerView(frame: frame, layout: labelLayout, interpreter: interpreter)
         
         lottieContainer.isUserInteractionEnabled = false
         labelContainer.isUserInteractionEnabled = false
@@ -58,14 +59,27 @@ public class StickerContainer: UIView {
         
         addSubview(lottieContainer)
         addSubview(labelContainer)
-        
-        layer.borderWidth = 1.0
-        
+                
         labelContainer.fillLabels(by: config["label container"]["labels"])
     }
 
     public func loadLottie(url: URL) -> () {
         lottieContainer.replaceAnimation(animationUrl: url)
+    }
+    
+    public func getLabelLayer() -> CALayer {
+        let resultLayer = labelContainer.animationLayer()
+        resultLayer.frame = frame
+        resultLayer.setAffineTransform(transform)
+        
+        return resultLayer
+    }
+    
+    public func getLabelView() -> UIView {
+        let v = labelContainer.labelView()
+        v.frame = frame
+        v.transform = transform
+        return v
     }
     
 }

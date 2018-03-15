@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01664D46205A6A430067B5DE /* ExpressionInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */; };
+		01664D4D205A77550067B5DE /* 雨天青蛙.webp in Resources */ = {isa = PBXBuildFile; fileRef = 01664D4C205A77550067B5DE /* 雨天青蛙.webp */; };
 		01B7A57720528A62000DB517 /* snowing.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57520528A62000DB517 /* snowing.yaml */; };
 		01B7A57820528A62000DB517 /* snowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57620528A62000DB517 /* snowing.json */; };
 		01B7A57920528ABC000DB517 /* snowing.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57520528A62000DB517 /* snowing.yaml */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionInterpreter.swift; sourceTree = "<group>"; };
+		01664D4C205A77550067B5DE /* 雨天青蛙.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雨天青蛙.webp"; sourceTree = "<group>"; };
 		01B7A57520528A62000DB517 /* snowing.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snowing.yaml; sourceTree = "<group>"; };
 		01B7A57620528A62000DB517 /* snowing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowing.json; sourceTree = "<group>"; };
 		01B7A57D20528D7E000DB517 /* TestReadYaml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReadYaml.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */,
 				01F1BBF72058D8DB00E76EA0 /* 青蛙.json */,
 				01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */,
+				01664D4C205A77550067B5DE /* 雨天青蛙.webp */,
 				01B7A57520528A62000DB517 /* snowing.yaml */,
 				01B7A57620528A62000DB517 /* snowing.json */,
 			);
@@ -132,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -243,10 +249,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = DASH6JFSDW;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = DASH6JFSDW;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -281,6 +289,7 @@
 				01B7A57720528A62000DB517 /* snowing.yaml in Resources */,
 				01F1BBF82058D8DB00E76EA0 /* 青蛙.yaml in Resources */,
 				01E2ED0D2058F9B000C03BBC /* 雪人完成.gif in Resources */,
+				01664D4D205A77550067B5DE /* 雨天青蛙.webp in Resources */,
 				01F1BBF92058D8DB00E76EA0 /* 青蛙.json in Resources */,
 				01B7A57820528A62000DB517 /* snowing.json in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -387,6 +396,7 @@
 				"${BUILT_PRODUCTS_DIR}/Yaml/Yaml.framework",
 				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
 				"${BUILT_PRODUCTS_DIR}/YogaKit/YogaKit.framework",
+				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -398,6 +408,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Yaml.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YogaKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +443,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				01664D46205A6A430067B5DE /* ExpressionInterpreter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +590,7 @@
 			baseConfigurationReference = 73BCD53E80CC23ED07925C25 /* Pods-StickerFromYAML_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DASH6JFSDW;
 				INFOPLIST_FILE = StickerFromYAML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -593,6 +606,7 @@
 			baseConfigurationReference = D3E55DDB043EA3C3CA0F89C7 /* Pods-StickerFromYAML_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DASH6JFSDW;
 				INFOPLIST_FILE = StickerFromYAML/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -607,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BEE35A639DF7B6B5E45D8D7 /* Pods-StickerFromYAML_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = DASH6JFSDW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -628,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D76FCC76E2B6E9EB757903D /* Pods-StickerFromYAML_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = DASH6JFSDW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

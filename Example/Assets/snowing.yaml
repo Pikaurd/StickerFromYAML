@@ -17,5 +17,5 @@ label container:
     down: 100
 
   labels:
-    - haha 
+    - "@function text() { return '   温度: ' + temperature() + '℃' }"
 ...

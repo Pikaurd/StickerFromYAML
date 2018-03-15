@@ -7,6 +7,7 @@
 
 import UIKit
 import YogaKit
+import JavaScriptCore
 
 class GridContainerView: UIView {
     
@@ -17,6 +18,8 @@ class GridContainerView: UIView {
     let leftMarginView = UIView()
     var centerView = UIView()
     let rightMarginView = UIView()
+    
+    var interpreter: ExpressionInterpreter?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,8 +33,9 @@ class GridContainerView: UIView {
         setupYoga(layout: Layout(left: 100, up: 100, right: 100, down: 100))
     }
     
-    init(frame: CGRect, layout: Layout) {
+    init(frame: CGRect, layout: Layout, interpreter: ExpressionInterpreter? = .none) {
         super.init(frame: frame)
+        self.interpreter = interpreter
         setup()
         setupYoga(layout: layout)
     }
@@ -63,17 +67,8 @@ class GridContainerView: UIView {
             layout.isEnabled = true
             layout.flexGrow = 100
             layout.justifyContent = YGJustify.spaceAround
-//            layout.flexDirection = YGFlexDirection.column
-//            layout.alignItems = YGAlign.center
         }
         rightMarginView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.right))
-        
-//        topContainerView.backgroundColor = .purple
-//        middleContainerView.backgroundColor = .lightGray
-//        bottomContainerView.backgroundColor = .orange
-//
-//        leftMarginView.backgroundColor = .yellow
-//        rightMarginView.backgroundColor = .blue
     }
     
     static func containerYogaSetup(flex: CGFloat) -> YGLayoutConfigurationBlock {

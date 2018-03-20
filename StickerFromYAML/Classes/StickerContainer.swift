@@ -15,17 +15,25 @@ public class StickerContainer: UIView {
     
     var lottieContainer: AnimationContainerView!
     var labelContainer: LabelContainerView!
-    
     var config: Yaml!
-    public var lottieView: LOTAnimationView { get { return lottieContainer.lottieView } }
+    
+    public var lottieView: LOTAnimationView? { get { return lottieContainer?.lottieView } }
+    
+    public init() {
+        super.init(frame: .zero)
+        config = Yaml(stringLiteral: "")
+        setup()
+    }
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
+        config = Yaml(stringLiteral: "")
         setup()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        config = Yaml(stringLiteral: "")
         setup()
     }
     
@@ -37,8 +45,8 @@ public class StickerContainer: UIView {
         
         config = yaml
         
-        let animationLayout = Layout.fromYaml(v: yaml["animation container"]["layout"])!
-        let labelLayout = Layout.fromYaml(v: yaml["label container"]["layout"])!
+        let animationLayout = Layout.fromYaml(v: yaml["animation container"]["layout"]) ?? Layout.zero()
+        let labelLayout = Layout.fromYaml(v: yaml["label container"]["layout"]) ?? Layout.zero()
         
         setup(animationLayout: animationLayout, labelLayout: labelLayout, interpreter: interpreter)
         lottieContainer.replaceAnimation(animationUrl: animationUrl)
@@ -76,10 +84,15 @@ public class StickerContainer: UIView {
     }
     
     public func getLabelView() -> UIView {
-        let v = labelContainer.labelView()
+        let v = labelContainer.labelView(container: self)
         v.frame = frame
-        v.transform = transform
+        v.transform = CGAffineTransform(rotationAngle: transform.rotation)
         return v
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        labelContainer.layoutSubviews()
     }
     
 }

@@ -13,6 +13,7 @@ import JavaScriptCore
 class LabelContainerView: GridContainerView {
     
     private let labelHeight = 20
+    private let baseFontSize = 9 as CGFloat
     
     var labels = Array<UILabel>()
 
@@ -24,7 +25,7 @@ class LabelContainerView: GridContainerView {
             centerView.addSubview(v)
             
             v.textColor = .white
-            v.font = UIFont.systemFont(ofSize: 18)
+            v.font = UIFont.systemFont(ofSize: baseFontSize)
             v.text = fillLabel(s: config[i].string ?? "") 
             labels.append(v)
         }
@@ -76,18 +77,28 @@ class LabelContainerView: GridContainerView {
         return resultLayer
     }
     
-    func labelView() -> UIView {
+    func labelView(container: UIView) -> UIView {
         let v = UIView()
+        v.frame = container.frame
         for l in labels {
+            let scale = container.transform.xScale
             let newLabel = UILabel()
-            newLabel.font = l.font
+            newLabel.font = l.font.withSize(baseFontSize * scale)
             newLabel.text = l.text
             newLabel.textColor = l.textColor
             let origin = centerView.convert(l.frame.origin, to: self)
-            newLabel.frame = CGRect(origin: origin, size: l.frame.size)
+            let newLabelFrame = CGRect(origin: origin, size: l.frame.size)
+            newLabel.frame = newLabelFrame.applying(CGAffineTransform(scaleX: container.transform.xScale, y: container.transform.yScale))
             v.addSubview(newLabel)
         }
         return v
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        guard let container = superview else { return () }
+        labels.apply { $0.font = $0.font.withSize(self.baseFontSize * container.transform.xScale) }
     }
     
     private func fillLabel(s: String) -> String {
@@ -106,4 +117,5 @@ class LabelContainerView: GridContainerView {
         
         return result?.toString() ?? "- none -"
     }
+
 }

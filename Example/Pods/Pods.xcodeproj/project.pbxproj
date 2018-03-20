@@ -11,6 +11,7 @@
 		002F27B83A2647B53B60D6CF6A6CDFD3 /* LOTKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D67D3709AD9100E7BDDAE11777628 /* LOTKeyframe.m */; };
 		007D9B63D51AC89D7F88F06ECB5C662D /* buffer_dec.c in Sources */ = {isa = PBXBuildFile; fileRef = 549869E310E99F62EA3D3F45BBA67DA5 /* buffer_dec.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc"; }; };
 		0164D40C85991CFE6C7921169ED9074E /* enc_msa.c in Sources */ = {isa = PBXBuildFile; fileRef = E21AE74F765AAC94A267107972AD266E /* enc_msa.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc"; }; };
+		01F331B62060BBE30022433E /* CGAffinetransform+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F331B52060BBE30022433E /* CGAffinetransform+Extension.swift */; };
 		0247FCA2AD46C909C3DEB4A1D8682406 /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 0149406307A72AD7A8AC36E73B953FD1 /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0287EA51B954E3CBB414BF444140828F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607713B48F894DE7150BADBD1643FBA4 /* Filter.swift */; };
 		02E634B30B76B569CB807F7E26480098 /* dec_sse41.c in Sources */ = {isa = PBXBuildFile; fileRef = CEA855260F7E47E735184C0575A97416 /* dec_sse41.c */; settings = {COMPILER_FLAGS = "-D_THREAD_SAFE -fno-objc-arc"; }; };
@@ -812,6 +813,7 @@
 		00B0CDE96AC1984077F74E921A355C5E /* LOTAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LOTAnimationView.h; path = "lottie-ios/Classes/PublicHeaders/LOTAnimationView.h"; sourceTree = "<group>"; };
 		011A4D5B18F1A28BBE24ED22DD6CB52B /* lottie-ios-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "lottie-ios-dummy.m"; sourceTree = "<group>"; };
 		0149406307A72AD7A8AC36E73B953FD1 /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
+		01F331B52060BBE30022433E /* CGAffinetransform+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffinetransform+Extension.swift"; sourceTree = "<group>"; };
 		01F4701107B0A628FF052D76DC298D86 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		028824DA075CDF2170EDFBD2C7C73FCC /* vp8li_enc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = vp8li_enc.h; path = src/enc/vp8li_enc.h; sourceTree = "<group>"; };
 		02889EF30FCCF93E5F043FF269AEE97B /* Pods-StickerFromYAML_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-StickerFromYAML_Tests.modulemap"; sourceTree = "<group>"; };
@@ -2491,6 +2493,7 @@
 				47137A15EF27B0DD6F62840777ABC36B /* Functools.swift */,
 				7E421579C5B303BA57FC1B7D997B64BA /* GridContainerView.swift */,
 				B320E0A62433A635DBCC275BE3EA7D98 /* LabelContainerView.swift */,
+				01F331B52060BBE30022433E /* CGAffinetransform+Extension.swift */,
 			);
 			name = Internal;
 			path = StickerFromYAML/Classes/Internal;
@@ -3663,6 +3666,7 @@
 				255967C24CD39086151A73D73004E3B5 /* LabelContainerView.swift in Sources */,
 				143FB0272584612855CA4A6E4AC3AC30 /* StickerContainer.swift in Sources */,
 				2F4BAF09C738D05157A31385B9A3C63C /* StickerFromYAML-dummy.m in Sources */,
+				01F331B62060BBE30022433E /* CGAffinetransform+Extension.swift in Sources */,
 				D06EC10696AD06F0CB0D27DE5CF75F34 /* StickerLayoutSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

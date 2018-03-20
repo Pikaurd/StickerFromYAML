@@ -29,7 +29,7 @@ class InterpreterProvider: ExpressionInterpreter {
     
     func injectTemperature() -> (@convention(block) () -> Int32) {
         return {
-            return Int32(arc4random_uniform(40) - 10)
+            return Int32(arc4random_uniform(40))
         }
     }
     

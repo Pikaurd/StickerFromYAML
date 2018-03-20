@@ -17,6 +17,8 @@ public class StickerContainer: UIView {
     var labelContainer: LabelContainerView!
     var config: Yaml!
     
+    public var stickerName = ""
+    
     public var lottieView: LOTAnimationView? { get { return lottieContainer?.lottieView } }
     
     public init() {
@@ -90,9 +92,18 @@ public class StickerContainer: UIView {
         return v
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        labelContainer.layoutSubviews()
+    public override var transform: CGAffineTransform {
+        set {
+            super.transform = newValue
+        }
+        get {
+            return super.transform
+        }
     }
+    
+//    public override func layoutSubviews() {
+//        super.layoutSubviews()
+//        labelContainer.layoutSubviews()
+//    }
     
 }

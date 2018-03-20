@@ -23,10 +23,10 @@ class ViewController: UIViewController {
                 
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, interpreter: InterpreterProvider.default)
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
-        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height + 10)
+        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
         var transform = stickerView.transform
-        transform = transform.scaledBy(x: 2, y: 2)
-        transform = transform.rotated(by: .pi * 0.5)
+//        transform = transform.scaledBy(x: 2, y: 2)
+//        transform = transform.rotated(by: .pi * 0.5)
         stickerView.transform = transform
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 1.0, animations: {
                 self.stickerView.transform = CGAffineTransform(scaleX: 3, y: 3)
             }, completion: { _ in
-//                self.stickerView.setNeedsLayout()
+                self.stickerView.setNeedsLayout()
                 self.stickerView.layoutIfNeeded()
             })
 //            let v = self.stickerView.getLabelView()

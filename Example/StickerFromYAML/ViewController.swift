@@ -23,15 +23,13 @@ class ViewController: UIViewController {
                 
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, interpreter: InterpreterProvider.default)
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
-        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
-        var transform = stickerView.transform
-//        transform = transform.scaledBy(x: 2, y: 2)
-//        transform = transform.rotated(by: .pi * 0.5)
-        stickerView.transform = transform
+//        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
+        stickerView.center = view.center
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
         
-        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureHandle(gesture:)))
+        stickerView.addGestureRecognizer(pinchGesture)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +55,18 @@ class ViewController: UIViewController {
 //            v.backgroundColor = .black
 //            self.view.addSubview(v)
         }
+    }
+    
+    @objc private func pinchGestureHandle(gesture: UIPinchGestureRecognizer) -> () {
+        guard let v = gesture.view else { return () }
+        
+        let scale = gesture.scale
+        v.transform = CGAffineTransform(scaleX: scale, y: scale)
+        
+//        if gesture.state == .ended {
+//            stickerView.setNeedsLayout()
+//            stickerView.layoutIfNeeded()
+//        }
     }
 
 }

@@ -18,4 +18,5 @@ label container:
 
   labels:
     - "@function text() { return '   温度: ' + temperature() + '℃' }"
+    - "@function text() { return '   temp: ' + temperature() + '℃' }"
 ...

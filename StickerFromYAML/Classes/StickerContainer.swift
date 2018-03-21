@@ -92,18 +92,9 @@ public class StickerContainer: UIView {
         return v
     }
     
-    public override var transform: CGAffineTransform {
-        set {
-            super.transform = newValue
-        }
-        get {
-            return super.transform
-        }
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        labelContainer.layoutSubviews()
     }
-    
-//    public override func layoutSubviews() {
-//        super.layoutSubviews()
-//        labelContainer.layoutSubviews()
-//    }
     
 }

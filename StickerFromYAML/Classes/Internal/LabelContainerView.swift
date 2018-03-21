@@ -24,33 +24,34 @@ class LabelContainerView: GridContainerView {
             centerView.addSubview(v)
             
             v.textColor = .white
-            v.font = UIFont.systemFont(ofSize: baseFontSize)
+            v.font = UIFont.systemFont(ofSize: baseFontSize * 10)
             v.text = fillLabel(s: config[i].string ?? "")
+//            v.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             labels.append(v)
         }
         
-        for i in 0..<arr.count {
-            let v = labels[i]
-            
-            v.snp.makeConstraints { make in
-                make.left.equalTo(self.centerView)
-                make.right.equalTo(self.centerView)
-                if i == 0 {
-                    make.top.equalTo(self.centerView)
-                }
-                else {
-                    make.top.equalTo(self.labels[i - 1].snp.bottom)
-                    make.height.equalTo(self.labels[i - 1])
-                }
-                
-                if i == arr.count - 1 {
-                    make.bottom.equalTo(self.centerView.snp.bottom)
-                }
-                else {
-                    make.bottom.equalTo(self.labels[i + 1].snp.top)
-                }
-            }
-        }
+//        for i in 0..<arr.count {
+//            let v = labels[i]
+//
+//            v.snp.makeConstraints { make in
+//                make.left.equalTo(self.centerView)
+//                make.right.equalTo(self.centerView)
+//                if i == 0 {
+//                    make.top.equalTo(self.centerView)
+//                }
+//                else {
+//                    make.top.equalTo(self.labels[i - 1].snp.bottom)
+//                    make.height.equalTo(self.labels[i - 1])
+//                }
+//
+//                if i == arr.count - 1 {
+//                    make.bottom.equalTo(self.centerView.snp.bottom)
+//                }
+//                else {
+//                    make.bottom.equalTo(self.labels[i + 1].snp.top)
+//                }
+//            }
+//        }
         
     }
     
@@ -91,6 +92,27 @@ class LabelContainerView: GridContainerView {
             v.addSubview(newLabel)
         }
         return v
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+//        print("superview.transform: \(superview?.transform.xScale)")
+//        print("view.transform: \(transform.xScale)")
+//        print("centerView.transform: \(centerView.transform.xScale)")
+//        print("centerView.frame: \(centerView.frame)")
+
+        guard let scale = superview?.transform.xScale else { return () }
+
+        let labelSize = CGSize(width: centerView.bounds.width, height: centerView.bounds.height / CGFloat(labels.count))
+        print("labelSize: \(labelSize) \t scale: \(scale)")
+        for i in 0 ..< labels.count {
+            let v = labels[i]
+            v.frame = CGRect(origin: .zero, size: labelSize)
+            v.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            v.center = CGPoint(x: centerView.bounds.width * 0.5, y: centerView.bounds.height * (0.5 + CGFloat(i)))
+        }
+
     }
     
     private func fillLabel(s: String) -> String {

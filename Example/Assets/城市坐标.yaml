@@ -1,0 +1,25 @@
+%YAML 1.2
+---
+name: 城市坐标
+
+animation container: 
+  layout:
+    align: left
+    up: 100
+    left: 100
+    right: 100
+    down: 100
+
+label container: 
+  layout:
+    align: right
+    up: 16
+    left: 40
+    right: 0
+    down: 0
+
+  font size: 15
+
+  labels:
+    - "@function text() { return cityName() }"
+...

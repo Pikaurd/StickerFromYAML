@@ -20,24 +20,29 @@ class GridContainerView: UIView {
     let rightMarginView = UIView()
     
     var interpreter: ExpressionInterpreter?
+    
+    private let layout: Layout
 
     override init(frame: CGRect) {
+        self.layout = Layout.zero()
         super.init(frame: frame)
         setup()
-        setupYoga(layout: Layout(left: 100, up: 100, right: 100, down: 100))
+        setupYoga()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.layout = Layout.zero()
         super.init(coder: aDecoder)
         setup()
-        setupYoga(layout: Layout(left: 100, up: 100, right: 100, down: 100))
+        setupYoga()
     }
     
     init(frame: CGRect, layout: Layout, interpreter: ExpressionInterpreter? = .none) {
+        self.layout = layout
         super.init(frame: frame)
         self.interpreter = interpreter
         setup()
-        setupYoga(layout: layout)
+        setupYoga()
     }
     
     func setup() -> () {
@@ -45,9 +50,22 @@ class GridContainerView: UIView {
         addSubview(middleContainerView)
         addSubview(bottomContainerView)
         
-        middleContainerView.addSubview(leftMarginView)
-        middleContainerView.addSubview(centerView)
-        middleContainerView.addSubview(rightMarginView)
+        switch layout.align {
+        case .left:
+            middleContainerView.addSubview(centerView)
+            middleContainerView.addSubview(leftMarginView)
+            middleContainerView.addSubview(rightMarginView)
+            
+        case .right:
+            middleContainerView.addSubview(leftMarginView)
+            middleContainerView.addSubview(rightMarginView)
+            middleContainerView.addSubview(centerView)
+            
+        default:
+            middleContainerView.addSubview(leftMarginView)
+            middleContainerView.addSubview(centerView)
+            middleContainerView.addSubview(rightMarginView)
+        }
         
         configureLayout { layout in
             layout.isEnabled = true
@@ -56,7 +74,7 @@ class GridContainerView: UIView {
 
     }
 
-    func setupYoga(layout: Layout) -> () {
+    func setupYoga() -> () {
         // setup containers
         topContainerView.configureLayout(block: GridContainerView.containerYogaSetup(flex: layout.up))
         middleContainerView.configureLayout(block: GridContainerView.containerYogaSetup(flex: 100))

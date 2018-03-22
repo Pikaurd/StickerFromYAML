@@ -1,0 +1,28 @@
+%YAML 1.2
+---
+name: 雪人完成
+
+animation container: 
+  layout:
+    align: center
+    up: 0
+    left: 0
+    right: 34
+    down: 0
+
+label container: 
+  layout:
+    align: right
+    up: 100
+    left: 100
+    right: 100
+    down: 33
+
+  font size: 15
+
+  labels:
+    -  
+    -  
+    - temperature 
+    - SNOW 
+...

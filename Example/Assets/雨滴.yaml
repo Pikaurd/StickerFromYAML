@@ -1,0 +1,27 @@
+%YAML 1.2
+---
+name: 雨滴
+
+animation container: 
+  layout:
+    align: left
+    up: 0
+    left: 54
+    right: 0
+    down: 0
+
+label container: 
+  layout:
+    align: right
+    up: 100
+    left: 100
+    right: 0
+    down: 80
+
+  font size: 20
+
+  labels:
+    -  
+    - rain % 
+    - CHANCE
+...

@@ -70,7 +70,7 @@ public class StickerContainer: UIView {
         addSubview(lottieContainer)
         addSubview(labelContainer)
                 
-        labelContainer.fillLabels(by: config["label container"]["labels"])
+        labelContainer.fillLabels(by: config["label container"])
     }
 
     public func loadLottie(url: URL) -> () {

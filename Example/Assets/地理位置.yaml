@@ -1,0 +1,27 @@
+%YAML 1.2
+---
+name: 地理位置
+
+animation container: 
+  layout:
+    align: center
+    up: 0
+    left: 0
+    right: 100
+    down: 18
+
+label container: 
+  layout:
+    align: right
+    up: 99
+    left: 72
+    right: 0
+    down: 93
+  
+  font size: 30
+
+  labels:
+    -  
+    -  
+    - SHANGHAI 
+...

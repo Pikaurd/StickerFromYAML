@@ -18,11 +18,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let url = Bundle.main.url(forResource: "雨天青蛙", withExtension: "webp")!
-        let yamlURL = Bundle.main.url(forResource: "snowing", withExtension: "yaml")!
+        let name = "雨滴"
+        let url = Bundle.main.url(forResource: name, withExtension: "webp")!
+        let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
                 
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, interpreter: InterpreterProvider.default)
-        stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
+        stickerView.frame = CGRect(origin: .zero, size: CGSize(width: 300, height: 300))
 //        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
         stickerView.center = view.center
         stickerView.backgroundColor = .gray
@@ -44,16 +45,16 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async {
             
-            UIView.animate(withDuration: 1.0, animations: {
-                self.stickerView.transform = CGAffineTransform(scaleX: 3, y: 3)
-            }, completion: { _ in
-                self.stickerView.setNeedsLayout()
-                self.stickerView.layoutIfNeeded()
-            })
-//            let v = self.stickerView.getLabelView()
-//            v.frame.origin.y += 300
-//            v.backgroundColor = .black
-//            self.view.addSubview(v)
+//            UIView.animate(withDuration: 1.0, animations: {
+//                self.stickerView.transform = CGAffineTransform(scaleX: 3, y: 3)
+//            }, completion: { _ in
+//                self.stickerView.setNeedsLayout()
+//                self.stickerView.layoutIfNeeded()
+//            })
+            let v = self.stickerView.getLabelView()
+            v.frame.origin.y += 300
+            v.backgroundColor = .black
+            self.view.addSubview(v)
         }
     }
     

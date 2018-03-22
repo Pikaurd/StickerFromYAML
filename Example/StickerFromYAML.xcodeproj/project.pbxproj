@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013AE79B20636AD0002CA1F8 /* 地理位置.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 013AE79920636ACF002CA1F8 /* 地理位置.yaml */; };
+		013AE79C20636AD0002CA1F8 /* 地理位置.webp in Resources */ = {isa = PBXBuildFile; fileRef = 013AE79A20636ACF002CA1F8 /* 地理位置.webp */; };
+		013AE7A020638EA0002CA1F8 /* 雨天青蛙.webp in Resources */ = {isa = PBXBuildFile; fileRef = 013AE79F20638EA0002CA1F8 /* 雨天青蛙.webp */; };
+		013AE7A4206392C8002CA1F8 /* 雨天青蛙.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 013AE7A3206392C8002CA1F8 /* 雨天青蛙.yaml */; };
+		013AE7A6206394BA002CA1F8 /* 城市坐标.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 013AE7A5206394B9002CA1F8 /* 城市坐标.yaml */; };
+		013AE7A8206394C3002CA1F8 /* 城市坐标.webp in Resources */ = {isa = PBXBuildFile; fileRef = 013AE7A7206394C3002CA1F8 /* 城市坐标.webp */; };
+		013AE7AA2063969F002CA1F8 /* 雪人完成.webp in Resources */ = {isa = PBXBuildFile; fileRef = 013AE7A92063969F002CA1F8 /* 雪人完成.webp */; };
+		013AE7AC206396A6002CA1F8 /* 雪人完成.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 013AE7AB206396A5002CA1F8 /* 雪人完成.yaml */; };
 		01664D46205A6A430067B5DE /* ExpressionInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */; };
-		01664D4D205A77550067B5DE /* 雨天青蛙.webp in Resources */ = {isa = PBXBuildFile; fileRef = 01664D4C205A77550067B5DE /* 雨天青蛙.webp */; };
+		0199CCEC206399810031AD78 /* 秋风.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 0199CCEB206399810031AD78 /* 秋风.yaml */; };
+		0199CCEE206399900031AD78 /* 秋风.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0199CCED206399900031AD78 /* 秋风.webp */; };
+		0199CCF120639B180031AD78 /* 地理位置2.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0199CCEF20639B170031AD78 /* 地理位置2.webp */; };
+		0199CCF220639B180031AD78 /* 地理位置2.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 0199CCF020639B180031AD78 /* 地理位置2.yaml */; };
+		0199CCF620639D0B0031AD78 /* 雨滴.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0199CCF420639D0A0031AD78 /* 雨滴.webp */; };
+		0199CCF720639D0B0031AD78 /* 雨滴.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 0199CCF520639D0A0031AD78 /* 雨滴.yaml */; };
 		01B7A57720528A62000DB517 /* snowing.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57520528A62000DB517 /* snowing.yaml */; };
 		01B7A57820528A62000DB517 /* snowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57620528A62000DB517 /* snowing.json */; };
 		01B7A57920528ABC000DB517 /* snowing.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57520528A62000DB517 /* snowing.yaml */; };
 		01B7A57A20528ABC000DB517 /* snowing.json in Resources */ = {isa = PBXBuildFile; fileRef = 01B7A57620528A62000DB517 /* snowing.json */; };
 		01B7A57E20528D7E000DB517 /* TestReadYaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7A57D20528D7E000DB517 /* TestReadYaml.swift */; };
-		01E2ED0D2058F9B000C03BBC /* 雪人完成.gif in Resources */ = {isa = PBXBuildFile; fileRef = 01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */; };
 		01F1BBF82058D8DB00E76EA0 /* 青蛙.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */; };
 		01F1BBF92058D8DB00E76EA0 /* 青蛙.json in Resources */ = {isa = PBXBuildFile; fileRef = 01F1BBF72058D8DB00E76EA0 /* 青蛙.json */; };
 		0267C44CA5F678BDB05AB21A /* Pods_StickerFromYAML_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FAD5237D6536048B826EA4 /* Pods_StickerFromYAML_Example.framework */; };
@@ -38,12 +50,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		013AE79920636ACF002CA1F8 /* 地理位置.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "地理位置.yaml"; sourceTree = "<group>"; };
+		013AE79A20636ACF002CA1F8 /* 地理位置.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "地理位置.webp"; sourceTree = "<group>"; };
+		013AE79F20638EA0002CA1F8 /* 雨天青蛙.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雨天青蛙.webp"; sourceTree = "<group>"; };
+		013AE7A3206392C8002CA1F8 /* 雨天青蛙.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "雨天青蛙.yaml"; path = "../../../react-boilerplate/assets/雨天青蛙.yaml"; sourceTree = "<group>"; };
+		013AE7A5206394B9002CA1F8 /* 城市坐标.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "城市坐标.yaml"; sourceTree = "<group>"; };
+		013AE7A7206394C3002CA1F8 /* 城市坐标.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "城市坐标.webp"; sourceTree = "<group>"; };
+		013AE7A92063969F002CA1F8 /* 雪人完成.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雪人完成.webp"; sourceTree = "<group>"; };
+		013AE7AB206396A5002CA1F8 /* 雪人完成.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "雪人完成.yaml"; sourceTree = "<group>"; };
 		01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionInterpreter.swift; sourceTree = "<group>"; };
-		01664D4C205A77550067B5DE /* 雨天青蛙.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雨天青蛙.webp"; sourceTree = "<group>"; };
+		0199CCEB206399810031AD78 /* 秋风.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "秋风.yaml"; sourceTree = "<group>"; };
+		0199CCED206399900031AD78 /* 秋风.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "秋风.webp"; sourceTree = "<group>"; };
+		0199CCEF20639B170031AD78 /* 地理位置2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "地理位置2.webp"; sourceTree = "<group>"; };
+		0199CCF020639B180031AD78 /* 地理位置2.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "地理位置2.yaml"; sourceTree = "<group>"; };
+		0199CCF420639D0A0031AD78 /* 雨滴.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雨滴.webp"; sourceTree = "<group>"; };
+		0199CCF520639D0A0031AD78 /* 雨滴.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "雨滴.yaml"; sourceTree = "<group>"; };
 		01B7A57520528A62000DB517 /* snowing.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = snowing.yaml; sourceTree = "<group>"; };
 		01B7A57620528A62000DB517 /* snowing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = snowing.json; sourceTree = "<group>"; };
 		01B7A57D20528D7E000DB517 /* TestReadYaml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReadYaml.swift; sourceTree = "<group>"; };
-		01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "雪人完成.gif"; sourceTree = "<group>"; };
 		01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "青蛙.yaml"; sourceTree = "<group>"; };
 		01F1BBF72058D8DB00E76EA0 /* 青蛙.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "青蛙.json"; sourceTree = "<group>"; };
 		2B5811EF182D55B2A7031889 /* StickerFromYAML.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StickerFromYAML.podspec; path = ../StickerFromYAML.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -90,10 +114,22 @@
 		01B7A57420528A62000DB517 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				01E2ED0C2058F9B000C03BBC /* 雪人完成.gif */,
+				0199CCF420639D0A0031AD78 /* 雨滴.webp */,
+				0199CCF520639D0A0031AD78 /* 雨滴.yaml */,
+				0199CCEF20639B170031AD78 /* 地理位置2.webp */,
+				0199CCF020639B180031AD78 /* 地理位置2.yaml */,
+				0199CCEB206399810031AD78 /* 秋风.yaml */,
+				0199CCED206399900031AD78 /* 秋风.webp */,
+				013AE79A20636ACF002CA1F8 /* 地理位置.webp */,
+				013AE79920636ACF002CA1F8 /* 地理位置.yaml */,
+				013AE7A92063969F002CA1F8 /* 雪人完成.webp */,
+				013AE7AB206396A5002CA1F8 /* 雪人完成.yaml */,
 				01F1BBF72058D8DB00E76EA0 /* 青蛙.json */,
 				01F1BBF62058D8DB00E76EA0 /* 青蛙.yaml */,
-				01664D4C205A77550067B5DE /* 雨天青蛙.webp */,
+				013AE7A7206394C3002CA1F8 /* 城市坐标.webp */,
+				013AE7A5206394B9002CA1F8 /* 城市坐标.yaml */,
+				013AE7A3206392C8002CA1F8 /* 雨天青蛙.yaml */,
+				013AE79F20638EA0002CA1F8 /* 雨天青蛙.webp */,
 				01B7A57520528A62000DB517 /* snowing.yaml */,
 				01B7A57620528A62000DB517 /* snowing.json */,
 			);
@@ -285,13 +321,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				0199CCEC206399810031AD78 /* 秋风.yaml in Resources */,
+				013AE79C20636AD0002CA1F8 /* 地理位置.webp in Resources */,
+				0199CCF120639B180031AD78 /* 地理位置2.webp in Resources */,
+				013AE7A4206392C8002CA1F8 /* 雨天青蛙.yaml in Resources */,
+				013AE7A6206394BA002CA1F8 /* 城市坐标.yaml in Resources */,
+				013AE79B20636AD0002CA1F8 /* 地理位置.yaml in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				013AE7A020638EA0002CA1F8 /* 雨天青蛙.webp in Resources */,
+				0199CCF720639D0B0031AD78 /* 雨滴.yaml in Resources */,
+				013AE7AA2063969F002CA1F8 /* 雪人完成.webp in Resources */,
+				0199CCEE206399900031AD78 /* 秋风.webp in Resources */,
 				01B7A57720528A62000DB517 /* snowing.yaml in Resources */,
+				0199CCF220639B180031AD78 /* 地理位置2.yaml in Resources */,
 				01F1BBF82058D8DB00E76EA0 /* 青蛙.yaml in Resources */,
-				01E2ED0D2058F9B000C03BBC /* 雪人完成.gif in Resources */,
-				01664D4D205A77550067B5DE /* 雨天青蛙.webp in Resources */,
+				013AE7A8206394C3002CA1F8 /* 城市坐标.webp in Resources */,
+				0199CCF620639D0B0031AD78 /* 雨滴.webp in Resources */,
 				01F1BBF92058D8DB00E76EA0 /* 青蛙.json in Resources */,
 				01B7A57820528A62000DB517 /* snowing.json in Resources */,
+				013AE7AC206396A6002CA1F8 /* 雪人完成.yaml in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

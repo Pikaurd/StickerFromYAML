@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let name = "雨滴"
+        let name = "地理位置2"
         let url = Bundle.main.url(forResource: name, withExtension: "webp")!
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
@@ -55,6 +55,7 @@ class ViewController: UIViewController {
             let v = self.stickerView.getLabelView()
             v.frame.origin.y += 300
             v.backgroundColor = .black
+            print(v.frame)
             self.view.addSubview(v)
         }
     }

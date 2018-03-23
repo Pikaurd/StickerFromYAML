@@ -59,15 +59,16 @@ class LabelContainerView: GridContainerView {
     func labelView(container: UIView) -> UIView {
         let v = UIView()
         v.frame = container.frame
-        for l in labels {
-            let scale = container.transform.xScale
+        let scale = v.bounds.width / 3000  // base width is 300, and base scale is 0.1 therefore using width divide 3000
+
+        for i in 0 ..< labels.count {
+            let l = labels[i]
             let newLabel = UILabel()
-            newLabel.font = l.font.withSize(baseFontSize * scale)
+            newLabel.font = UIFont(name: "PingFangSC-Semibold", size: baseFontSize * scale * 10)
             newLabel.text = l.text
             newLabel.textColor = l.textColor
-            let origin = centerView.convert(l.frame.origin, to: self)
-            let newLabelFrame = CGRect(origin: origin, size: l.frame.size)
-            newLabel.frame = newLabelFrame.applying(CGAffineTransform(scaleX: container.transform.xScale, y: container.transform.yScale))
+            let frame = centerView.convert(l.frame, to: self)
+            newLabel.frame = frame * container.transform.xScale
             v.addSubview(newLabel)
         }
         return v
@@ -78,11 +79,13 @@ class LabelContainerView: GridContainerView {
 
         let scale = bounds.width / 3000  // base width is 300, and base scale is 0.1 therefore using width divide 3000
         let labelSize = CGSize(width: centerView.bounds.width, height: centerView.bounds.height / CGFloat(labels.count))
+        print("label size: \(labelSize)")
         for i in 0 ..< labels.count {
             let v = labels[i]
             v.frame = CGRect(origin: .zero, size: labelSize)
             v.transform = CGAffineTransform(scaleX: scale, y: scale)
             v.center = CGPoint(x: centerView.bounds.width * 0.5, y: labelSize.height * (0.5 + CGFloat(i)))
+            print("v label size: \(v.frame.size)")
         }
 
     }

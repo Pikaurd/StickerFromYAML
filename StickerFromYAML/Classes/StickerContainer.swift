@@ -20,6 +20,7 @@ public class StickerContainer: UIView {
     public var stickerName = ""
     
     public var lottieView: LOTAnimationView? { get { return lottieContainer?.lottieView } }
+    public var animationContainerView: UIView { get { return lottieContainer.centerView } }
     
     public init() {
         super.init(frame: .zero)

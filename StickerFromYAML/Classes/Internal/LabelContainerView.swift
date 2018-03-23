@@ -76,11 +76,12 @@ class LabelContainerView: GridContainerView {
     override func layoutSubviews() {
         super.layoutSubviews()
 
+        let scale = bounds.width / 3000  // base width is 300, and base scale is 0.1 therefore using width divide 3000
         let labelSize = CGSize(width: centerView.bounds.width, height: centerView.bounds.height / CGFloat(labels.count))
         for i in 0 ..< labels.count {
             let v = labels[i]
             v.frame = CGRect(origin: .zero, size: labelSize)
-            v.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            v.transform = CGAffineTransform(scaleX: scale, y: scale)
             v.center = CGPoint(x: centerView.bounds.width * 0.5, y: labelSize.height * (0.5 + CGFloat(i)))
         }
 

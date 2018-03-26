@@ -40,7 +40,11 @@ public class StickerContainer: UIView {
         setup()
     }
     
-    public init(animationUrl: URL, configUrl: URL, interpreter: ExpressionInterpreter? = .none) {
+    public convenience init(animationUrl: URL?, configUrl: URL, interpreter: ExpressionInterpreter? = .none) {
+        self.init(animationUrl: animationUrl, configUrl: configUrl, placeholderImage: .none, interpreter: interpreter)
+    }
+    
+    public init(animationUrl: URL?, configUrl: URL, placeholderImage: UIImage? = .none, interpreter: ExpressionInterpreter? = .none) {
         super.init(frame: .zero)
         
         let yamlString = try! String(contentsOf: configUrl)
@@ -52,7 +56,14 @@ public class StickerContainer: UIView {
         let labelLayout = Layout.fromYaml(v: yaml["label container"]["layout"]) ?? Layout.zero()
         
         setup(animationLayout: animationLayout, labelLayout: labelLayout, interpreter: interpreter)
-        lottieContainer.replaceAnimation(animationUrl: animationUrl)
+        lottieContainer.replaceAnimation(animationUrl: animationUrl, placeholderImage: placeholderImage)
+    }
+    
+    public init (placeholderImage: UIImage) {
+        super.init(frame: .zero)
+        config = Yaml(stringLiteral: "")
+        setup()
+        lottieContainer.replaceAnimation(animationUrl: .none, placeholderImage: placeholderImage)
     }
     
     private func setup(animationLayout: Layout = Layout.zero(), labelLayout: Layout = Layout.zero(), interpreter: ExpressionInterpreter? = .none) -> () {
@@ -75,7 +86,7 @@ public class StickerContainer: UIView {
     }
 
     public func loadLottie(url: URL) -> () {
-        lottieContainer.replaceAnimation(animationUrl: url)
+        lottieContainer.replaceAnimation(animationUrl: url, placeholderImage: .none)
     }
     
     public func getLabelLayer() -> CALayer {

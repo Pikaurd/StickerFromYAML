@@ -18,15 +18,23 @@ class AnimationContainerView: GridContainerView {
         super.setup()
         
         centerView.addSubview(gifView)
+        gifView.frame = bounds
+        gifView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        gifView.contentMode = .scaleAspectFit
     }
     
-    func replaceAnimation(animationUrl: URL) -> () {
+    func replaceAnimation(animationUrl: URL?, placeholderImage: UIImage?) -> () {
+        guard let animationUrl = animationUrl else {
+            gifView.image = placeholderImage
+            return ()
+        }
+        
         if (animationUrl.path.hasSuffix("json")) {
             loadLottie(url: animationUrl)
         }
         else {
             lottieView.removeFromSuperview()
-            loadGif(url: animationUrl)
+            loadGif(url: animationUrl, placeholderImage: placeholderImage)
         }
     }
     
@@ -41,11 +49,8 @@ class AnimationContainerView: GridContainerView {
         centerView.addSubview(lottieView)
     }
     
-    private func loadGif(url: URL) -> () {
-        gifView.frame = bounds
-        gifView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        gifView.contentMode = .scaleAspectFit
-        gifView.sd_setImage(with: url, completed: .none)
+    private func loadGif(url: URL, placeholderImage: UIImage?) -> () {
+        gifView.sd_setImage(with: url, placeholderImage: placeholderImage, options: .retryFailed, completed: .none)
     }
 
 }

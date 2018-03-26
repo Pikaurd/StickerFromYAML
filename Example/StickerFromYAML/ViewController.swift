@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
         let size = 100
-        stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, interpreter: InterpreterProvider.default)
+//        stickerView = StickerContainer(animationUrl: .none, configUrl: yamlURL, placeholderImage: #imageLiteral(resourceName: "placeholder"), interpreter: InterpreterProvider.default)
+        stickerView = StickerContainer(placeholderImage: #imageLiteral(resourceName: "placeholder"))
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
 //        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
         stickerView.center = view.center

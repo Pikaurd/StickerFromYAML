@@ -1,6 +1,6 @@
 %YAML 1.2
 ---
-name: 地理位置
+name: 风向扁平风格
 
 animation container: 
   layout:
@@ -13,13 +13,16 @@ animation container:
 label container: 
   layout:
     align: right
-    up: 0
-    left: 30
+    up: 100
+    left: 41
     right: 0
-    down: 0
+    down: 100
 
-  font size: 30
+  font size: 15
 
   labels:
-    - Shanghai 
+    -  
+    - ws 
+    - wd 
+    -  
 ...

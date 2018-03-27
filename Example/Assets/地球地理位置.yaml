@@ -1,24 +1,29 @@
 %YAML 1.2
 ---
-name: 青蛙
+name: 地球地理位置
 
 animation container: 
   layout:
+    align: left
     up: 0
     left: 0
-    right: 50
+    right: 100
     down: 0
 
 label container: 
   layout:
+    align: right
     up: 100
-    left: 100
+    left: 63
     right: 0
-    down: 24
+    down: 71
+
+  font size: 15
 
   labels:
     -  
-    - line 1 
-    - line 2 
     -  
+    -  
+    - lat 
+    - lon 
 ...

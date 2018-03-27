@@ -7,22 +7,23 @@ animation container:
     align: left
     up: 0
     left: 0
-    right: 51
+    right: 100
     down: 0
 
 label container: 
   layout:
     align: right
     up: 100
-    left: 100
-    right: 63
-    down: 43
+    left: 77
+    right: 0
+    down: 73
 
   font size: 15
 
   labels:
     -  
     -  
-    - Speed 
-    - Direction 
+    -  
+    - ws 
+    - wd 
 ...

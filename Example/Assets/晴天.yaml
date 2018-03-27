@@ -1,26 +1,28 @@
 %YAML 1.2
 ---
-name: 地理位置2
+name: 晴天
 
 animation container: 
   layout:
     align: left
     up: 0
-    left: 100
+    left: 0
     right: 100
     down: 0
 
 label container: 
   layout:
     align: right
-    up: 7
-    left: 0
-    right: 34
-    down: 0
+    up: 100
+    left: 87
+    right: 0
+    down: 100
 
-  font size: 25
+  font size: 15
 
   labels:
-    - SHANGHAI
-    - line 2
+    -  
+    - temp 
+    - Clear 
+    -  
 ...

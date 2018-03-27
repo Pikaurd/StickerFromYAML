@@ -18,6 +18,7 @@ public class StickerContainer: UIView {
     var config: Yaml!
     
     public var stickerName = ""
+    public var stickerFrameCont = 30
     
     public var lottieView: LOTAnimationView? { get { return lottieContainer?.lottieView } }
     public var animationContainerView: UIView { get { return lottieContainer.centerView } }

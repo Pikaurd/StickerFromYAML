@@ -6,22 +6,22 @@ animation container:
   layout:
     align: left
     up: 0
-    left: 54
-    right: 0
+    left: 0
+    right: 100
     down: 0
 
 label container: 
   layout:
     align: right
-    up: 100
-    left: 100
+    up: 91
+    left: 58
     right: 0
-    down: 80
+    down: 100
 
-  font size: 20
+  font size: 15
 
   labels:
     -  
     - rain % 
-    - CHANCE
+    - Chance 
 ...

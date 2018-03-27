@@ -4,25 +4,25 @@ name: 雪人完成
 
 animation container: 
   layout:
-    align: center
+    align: left
     up: 0
     left: 0
-    right: 34
+    right: 100
     down: 0
 
 label container: 
   layout:
     align: right
     up: 100
-    left: 100
-    right: 100
-    down: 33
+    left: 72
+    right: 0
+    down: 68
 
   font size: 15
 
   labels:
     -  
     -  
-    - temperature 
+    - temp  
     - SNOW 
 ...

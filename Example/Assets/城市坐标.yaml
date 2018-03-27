@@ -5,21 +5,21 @@ name: 城市坐标
 animation container: 
   layout:
     align: left
-    up: 100
-    left: 100
+    up: 0
+    left: 0
     right: 100
-    down: 100
+    down: 0
 
 label container: 
   layout:
     align: right
-    up: 16
-    left: 40
+    up: 29
+    left: 81
     right: 0
     down: 0
 
-  font size: 15
+  font size: 30
 
   labels:
-    - "@function text() { return cityName() }"
+    - Shanghai 
 ...

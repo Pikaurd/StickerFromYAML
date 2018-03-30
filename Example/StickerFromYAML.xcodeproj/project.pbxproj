@@ -34,6 +34,8 @@
 		0147FC9C206CE99B004E0D27 /* 雨滴.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0147FC81206CE998004E0D27 /* 雨滴.webp */; };
 		0147FC9D206CE99B004E0D27 /* 城市坐标.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0147FC82206CE999004E0D27 /* 城市坐标.webp */; };
 		0147FC9E206CE99B004E0D27 /* 常用晴天.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0147FC83206CE99A004E0D27 /* 常用晴天.webp */; };
+		0147FCA5206DE806004E0D27 /* 中国.webp in Resources */ = {isa = PBXBuildFile; fileRef = 0147FCA3206DE804004E0D27 /* 中国.webp */; };
+		0147FCA6206DE806004E0D27 /* 中国.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 0147FCA4206DE805004E0D27 /* 中国.yaml */; };
 		01664D46205A6A430067B5DE /* ExpressionInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */; };
 		01B7A57E20528D7E000DB517 /* TestReadYaml.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7A57D20528D7E000DB517 /* TestReadYaml.swift */; };
 		0267C44CA5F678BDB05AB21A /* Pods_StickerFromYAML_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FAD5237D6536048B826EA4 /* Pods_StickerFromYAML_Example.framework */; };
@@ -84,6 +86,8 @@
 		0147FC81206CE998004E0D27 /* 雨滴.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "雨滴.webp"; sourceTree = "<group>"; };
 		0147FC82206CE999004E0D27 /* 城市坐标.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "城市坐标.webp"; sourceTree = "<group>"; };
 		0147FC83206CE99A004E0D27 /* 常用晴天.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "常用晴天.webp"; sourceTree = "<group>"; };
+		0147FCA3206DE804004E0D27 /* 中国.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "中国.webp"; sourceTree = "<group>"; };
+		0147FCA4206DE805004E0D27 /* 中国.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "中国.yaml"; sourceTree = "<group>"; };
 		01664D45205A6A430067B5DE /* ExpressionInterpreter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressionInterpreter.swift; sourceTree = "<group>"; };
 		01B7A57D20528D7E000DB517 /* TestReadYaml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReadYaml.swift; sourceTree = "<group>"; };
 		2B5811EF182D55B2A7031889 /* StickerFromYAML.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StickerFromYAML.podspec; path = ../StickerFromYAML.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -130,6 +134,8 @@
 		01B7A57420528A62000DB517 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0147FCA3206DE804004E0D27 /* 中国.webp */,
+				0147FCA4206DE805004E0D27 /* 中国.yaml */,
 				0147FC69206CE98D004E0D27 /* 下雪.webp */,
 				0147FC6C206CE98E004E0D27 /* 下雪.yaml */,
 				0147FC7B206CE994004E0D27 /* 地球地理位置.webp */,
@@ -359,9 +365,11 @@
 				0147FC96206CE99B004E0D27 /* 地球地理位置.webp in Resources */,
 				0147FC8B206CE99B004E0D27 /* 雪人完成.yaml in Resources */,
 				0147FC86206CE99B004E0D27 /* 风向扁平风格.yaml in Resources */,
+				0147FCA5206DE806004E0D27 /* 中国.webp in Resources */,
 				0147FC97206CE99B004E0D27 /* 常用晴天.yaml in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				0147FC9C206CE99B004E0D27 /* 雨滴.webp in Resources */,
+				0147FCA6206DE806004E0D27 /* 中国.yaml in Resources */,
 				0147FC88206CE99B004E0D27 /* 秋风.webp in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				0147FC89206CE99B004E0D27 /* 秋风.yaml in Resources */,

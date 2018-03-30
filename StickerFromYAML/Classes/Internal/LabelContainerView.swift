@@ -112,7 +112,7 @@ class LabelContainerView: GridContainerView {
         return result?.toString() ?? "- none -"
     }
     
-    override func foo() -> CGRect {
+    override func contentViewFrame() -> CGRect {
 
         let frameInCenterView = labels.reduce(CGRect.zero, { (acc: CGRect, label: UILabel) -> CGRect in
             return acc.union(label.frame)

@@ -18,13 +18,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let name = "指南针扁平风格"
-//        let name = "雨滴"
+//        let name = "指南针扁平风格"
+        let name = "中国"
         let url = Bundle.main.url(forResource: name, withExtension: "webp")!
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
         let size = 300
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, placeholderImage: .none, interpreter: InterpreterProvider.default)
+        stickerView.debugMode = true
 //        stickerView = StickerContainer(placeholderImage: #imageLiteral(resourceName: "placeholder"))
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
 //        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)

@@ -55,12 +55,22 @@ class AnimationContainerView: GridContainerView {
         }
     }
     
-    override func foo() -> CGRect {
-        let superFoo = super.foo()
+    override func contentViewFrame() -> CGRect {
+        let animFrame = centerView.convert(animatedImageView.frame, to: self)
+        let shrinkToRectangle: CGRect
+        if animFrame.width > animFrame.height {
+            let offset = (animFrame.width - animFrame.height) * 0.5
+            shrinkToRectangle = CGRect(x: animFrame.minX + offset, y: animFrame.minY, width: animFrame.width - offset * 2, height: animFrame.height)
+        }
+        else if animFrame.width < animFrame.height {
+            let offset = (animFrame.height - animFrame.width) * 0.5
+            shrinkToRectangle = CGRect(x: animFrame.minX, y: animFrame.minY + offset, width: animFrame.width, height: animFrame.height - offset * 2)
+        }
+        else {
+            shrinkToRectangle = animFrame
+        }
         
-        let origin = CGPoint(x: max(superFoo.origin.x, animatedImageView.frame.origin.x), y: max(superFoo.origin.y, animatedImageView.frame.origin.y))
-        let size = super.foo().size
-        return CGRect(origin: origin, size: size)
+        return shrinkToRectangle
     }
     
     private func loadLottie(url: URL) -> () {

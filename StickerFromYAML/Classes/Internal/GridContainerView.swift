@@ -106,13 +106,16 @@ class GridContainerView: UIView {
         return middleContainerView.convert(centerView.frame, to: self)
     }
     
-    func foo() -> CGRect {
+    func contentViewFrame() -> CGRect {
         let allCapacity = 300 as CGFloat
-        let totalMargin = layout.left + layout.right
-        let usedCapacity = allCapacity - totalMargin
         
-        let height = bounds.height * usedCapacity / allCapacity
-        let centerViewOrigin = CGPoint(x: 0, y: totalMargin * 0.5 / allCapacity * bounds.height)
+        let totalVertialMargin = layout.left + layout.right
+        
+        let totalHorizonMargin = layout.up + layout.down
+        let usedHorizonCapacity = allCapacity - totalVertialMargin
+        
+        let height = bounds.height * usedHorizonCapacity / allCapacity
+        let centerViewOrigin = CGPoint(x: 0, y: totalVertialMargin * 0.5 / allCapacity * bounds.height)
         let centerViewSize = CGSize(width: centerView.bounds.width, height: height)
         
         return CGRect(origin: centerViewOrigin, size: centerViewSize)

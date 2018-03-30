@@ -45,7 +45,7 @@ PODS:
     - libwebp (~> 0.5)
     - SDWebImage/Core
   - SnapKit (4.0.0)
-  - StickerFromYAML (0.2.2):
+  - StickerFromYAML (0.2.9):
     - lottie-ios
     - SDWebImage/GIF
     - SDWebImage/WebP
@@ -79,7 +79,7 @@ SPEC CHECKSUMS:
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
   SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  StickerFromYAML: 407d99d8c452c93c8d5848959d76ab25e78478ed
+  StickerFromYAML: f7646991f4b1e403df2c932404e1e9388147fc80
   Yaml: 608d95686ff5b814eabc9faa7d3d1ac8d874c5e0
   Yoga: 81670877477311136b1b3f69a6307ce62e1c89cf
   YogaKit: 8fe0ddd21673226c0b6077fc3ad5c8fa6cda722e

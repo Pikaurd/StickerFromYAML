@@ -1,6 +1,6 @@
 {
   "name": "StickerFromYAML",
-  "version": "0.2.2",
+  "version": "0.2.9",
   "summary": "A short description of StickerFromYAML.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/pikaurd/StickerFromYAML",
@@ -11,7 +11,7 @@
   "authors": "Rela",
   "source": {
     "git": "https://github.com/pikaurd/StickerFromYAML.git",
-    "tag": "0.2.2"
+    "tag": "0.2.9"
   },
   "platforms": {
     "ios": "8.0"

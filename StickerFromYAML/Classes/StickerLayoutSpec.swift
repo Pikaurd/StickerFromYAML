@@ -15,6 +15,8 @@ struct Layout {
     let up: CGFloat
     let right: CGFloat
     let down: CGFloat
+    let scale: CGFloat
+    let anchorPoint: CGPoint
     
     static func fromYaml(v: Yaml) -> Layout? {
         guard let left = v["left"].int,
@@ -29,12 +31,14 @@ struct Layout {
             left: CGFloat(left),
             up: CGFloat(up),
             right: CGFloat(right),
-            down: CGFloat(down)
+            down: CGFloat(down),
+            scale: CGFloat(v["scale"].double ?? 1.0),
+            anchorPoint: CGPoint(x: v["anchorX"].double ?? 0.5, y: v["anchorY"].double ?? 0.5)
         )
     }
     
     static func zero() -> Layout {
-        return Layout(align: .center, left: 0, up: 0, right: 0, down: 0)
+        return Layout(align: .center, left: 0, up: 0, right: 0, down: 0, scale: 1.0, anchorPoint: CGPoint(x: 0.5, y: 0.5))
     }
 
     enum Align: String {

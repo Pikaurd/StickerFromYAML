@@ -21,7 +21,9 @@ public class StickerContainer: UIView {
     public var stickerFrameCont = 30
     
     public var lottieView: LOTAnimationView? { get { return lottieContainer?.lottieView } }
-    public var animationContainerView: UIView { get { return lottieContainer.centerView } }
+    public var animationContainerView: UIView { get { return lottieContainer.animatedImageView } }
+    
+    let debugTouchableAreaView = UIView()
     
     public init() {
         super.init(frame: .zero)
@@ -84,6 +86,10 @@ public class StickerContainer: UIView {
         addSubview(labelContainer)
                 
         labelContainer.fillLabels(by: config["label container"])
+        
+//        debugTouchableAreaView.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 0.5)
+//        addSubview(debugTouchableAreaView)
+//        debugTouchableAreaView.isUserInteractionEnabled = false
     }
 
     public func loadLottie(url: URL) -> () {
@@ -108,6 +114,19 @@ public class StickerContainer: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         labelContainer.layoutSubviews()
+    }
+    
+    public override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if isHidden || !isUserInteractionEnabled {
+            return super.point(inside: point, with: event)
+        }
+        
+        let animationViewFrame = lottieContainer.foo()
+        let labelViewFrame = labelContainer.foo()
+        let actionRect = animationViewFrame.union(labelViewFrame)
+//        debugTouchableAreaView.frame = actionRect
+        
+        return actionRect.contains(point)
     }
     
 }

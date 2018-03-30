@@ -9,20 +9,25 @@ animation container:
     left: 100
     right: 100
     down: 0
+    scale: 0.75
+    anchorX: 1
+    anchorY: 0.5
 
 label container: 
   layout:
     align: right
     up: 100
-    left: 41
+    left: 50
     right: 0
     down: 100
 
   font size: 15
 
   labels:
-    -  
-    - ws 
-    - wd 
-    -  
+    - "" 
+    - "" 
+    - "24°C" 
+    - "Cloudy" 
+    - "" 
+    - "" 
 ...

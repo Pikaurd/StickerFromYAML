@@ -21,7 +21,7 @@ class GridContainerView: UIView {
     
     var interpreter: ExpressionInterpreter?
     
-    private let layout: Layout
+    let layout: Layout
 
     override init(frame: CGRect) {
         self.layout = Layout.zero()
@@ -100,6 +100,22 @@ class GridContainerView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         yoga.applyLayout(preservingOrigin: false)
+    }
+    
+    func centerViewFrameInView() -> CGRect {
+        return middleContainerView.convert(centerView.frame, to: self)
+    }
+    
+    func foo() -> CGRect {
+        let allCapacity = 300 as CGFloat
+        let totalMargin = layout.left + layout.right
+        let usedCapacity = allCapacity - totalMargin
+        
+        let height = bounds.height * usedCapacity / allCapacity
+        let centerViewOrigin = CGPoint(x: 0, y: totalMargin * 0.5 / allCapacity * bounds.height)
+        let centerViewSize = CGSize(width: centerView.bounds.width, height: height)
+        
+        return CGRect(origin: centerViewOrigin, size: centerViewSize)
     }
 
 }

@@ -14,15 +14,17 @@ label container:
   layout:
     align: right
     up: 100
-    left: 72
+    left: 81
     right: 0
-    down: 68
+    down: 67
 
   font size: 15
 
   labels:
-    -  
-    -  
-    - temp  
-    - SNOW 
+    - "" 
+    - "" 
+    - "" 
+    - "" 
+    - "-10°C" 
+    - "Snow" 
 ...

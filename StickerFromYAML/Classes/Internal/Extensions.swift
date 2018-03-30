@@ -24,3 +24,13 @@ func * (lhs: CGRect, rhs: CGFloat) -> CGRect {
         height: lhs.size.height * rhs
     )
 }
+
+extension UIFont {
+    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+        return NSString(string: string).boundingRect(
+            with: CGSize(width: width, height: .greatestFiniteMagnitude),
+            options: .usesLineFragmentOrigin,
+            attributes: [.font: self],
+            context: nil).size
+    }
+}

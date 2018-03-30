@@ -14,16 +14,17 @@ label container:
   layout:
     align: right
     up: 100
-    left: 63
+    left: 73
     right: 0
-    down: 71
+    down: 72
 
   font size: 15
 
   labels:
-    -  
-    -  
-    -  
-    - lat 
-    - lon 
+    - "" 
+    - "" 
+    - "" 
+    - "" 
+    - "39° 64’ N" 
+    - "39° 64’ N" 
 ...

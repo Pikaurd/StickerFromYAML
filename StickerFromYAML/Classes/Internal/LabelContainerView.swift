@@ -13,6 +13,7 @@ import JavaScriptCore
 class LabelContainerView: GridContainerView {
     
     private var baseFontSize = 9 as CGFloat
+    private var longestLabelWidth = 0 as CGFloat
     
     var labels = Array<UILabel>()
 
@@ -26,10 +27,16 @@ class LabelContainerView: GridContainerView {
             let v = UILabel()
             centerView.addSubview(v)
             
+            let text = fillLabel(s: arr[i].string ?? "")
             v.textColor = .white
             v.font = UIFont(name: "PingFangSC-Semibold", size: baseFontSize * 10)
-            v.text = fillLabel(s: arr[i].string ?? "")
+            v.text = text
             labels.append(v)
+            
+            let labelWidth = v.font?.sizeOfString(string: text, constrainedToWidth: 3000).width ?? 0
+            if longestLabelWidth < labelWidth {
+                longestLabelWidth = labelWidth
+            }
         }
         
     }
@@ -79,13 +86,11 @@ class LabelContainerView: GridContainerView {
 
         let scale = bounds.width / 3000  // base width is 300, and base scale is 0.1 therefore using width divide 3000
         let labelSize = CGSize(width: centerView.bounds.width, height: centerView.bounds.height / CGFloat(labels.count))
-        print("label size: \(labelSize)")
         for i in 0 ..< labels.count {
             let v = labels[i]
             v.frame = CGRect(origin: .zero, size: labelSize)
             v.transform = CGAffineTransform(scaleX: scale, y: scale)
             v.center = CGPoint(x: centerView.bounds.width * 0.5, y: labelSize.height * (0.5 + CGFloat(i)))
-            print("v label size: \(v.frame.size)")
         }
 
     }
@@ -105,6 +110,17 @@ class LabelContainerView: GridContainerView {
         let result = jsEngine.evaluateScript("text()")
         
         return result?.toString() ?? "- none -"
+    }
+    
+    override func foo() -> CGRect {
+
+        let frameInCenterView = labels.reduce(CGRect.zero, { (acc: CGRect, label: UILabel) -> CGRect in
+            return acc.union(label.frame)
+        })
+        let frame = centerView.convert(frameInCenterView, to: self)
+        let textAdjestFrame = CGRect(origin: frame.origin, size: CGSize(width: longestLabelWidth * 0.1, height: frame.height))
+        
+        return textAdjestFrame
     }
 
 }

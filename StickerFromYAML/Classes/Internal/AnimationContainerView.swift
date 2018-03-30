@@ -12,20 +12,37 @@ import SDWebImage
 class AnimationContainerView: GridContainerView {
     
     var lottieView = LOTAnimationView()
-    private let gifView = FLAnimatedImageView()
+    let animatedImageView = FLAnimatedImageView()
+    private let loadingActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
     
     override func setup() {
         super.setup()
         
-        centerView.addSubview(gifView)
-        gifView.frame = bounds
-        gifView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        gifView.contentMode = .scaleAspectFit
+        centerView.addSubview(animatedImageView)
+        animatedImageView.contentMode = .scaleAspectFit
+        
+        loadingActivityIndicator.frame = animatedImageView.bounds
+        loadingActivityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        animatedImageView.addSubview(loadingActivityIndicator)
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let scale = layout.scale
+        let anchor = layout.anchorPoint
+        let origin = CGPoint(
+            x: centerView.bounds.width * (1 - scale) * anchor.x,
+            y: centerView.bounds.height * ((1 - scale) * anchor.y)
+        )
+        let size = CGSize(width: centerView.bounds.width * scale, height: centerView.bounds.height * scale)
+        animatedImageView.frame = CGRect(origin: origin, size: size)
     }
     
     func replaceAnimation(animationUrl: URL?, placeholderImage: UIImage?) -> () {
         guard let animationUrl = animationUrl else {
-            gifView.image = placeholderImage
+            animatedImageView.image = placeholderImage
             return ()
         }
         
@@ -36,6 +53,14 @@ class AnimationContainerView: GridContainerView {
             lottieView.removeFromSuperview()
             loadGif(url: animationUrl, placeholderImage: placeholderImage)
         }
+    }
+    
+    override func foo() -> CGRect {
+        let superFoo = super.foo()
+        
+        let origin = CGPoint(x: max(superFoo.origin.x, animatedImageView.frame.origin.x), y: max(superFoo.origin.y, animatedImageView.frame.origin.y))
+        let size = super.foo().size
+        return CGRect(origin: origin, size: size)
     }
     
     private func loadLottie(url: URL) -> () {
@@ -50,7 +75,10 @@ class AnimationContainerView: GridContainerView {
     }
     
     private func loadGif(url: URL, placeholderImage: UIImage?) -> () {
-        gifView.sd_setImage(with: url, placeholderImage: placeholderImage, options: .retryFailed, completed: .none)
+        loadingActivityIndicator.startAnimating()
+        animatedImageView.sd_setImage(with: url, placeholderImage: placeholderImage, options: .retryFailed) { (_, _, _, _) in
+            self.loadingActivityIndicator.stopAnimating()
+        }
     }
 
 }

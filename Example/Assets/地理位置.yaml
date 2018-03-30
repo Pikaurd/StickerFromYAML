@@ -9,17 +9,20 @@ animation container:
     left: 100
     right: 100
     down: 0
+    scale: 0.78
+    anchorX: 1
+    anchorY: 0.5
 
 label container: 
   layout:
     align: right
     up: 0
-    left: 30
+    left: 38
     right: 0
     down: 0
 
   font size: 30
 
   labels:
-    - Shanghai 
+    - "Shanghai" 
 ...

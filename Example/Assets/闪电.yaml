@@ -21,8 +21,10 @@ label container:
   font size: 15
 
   labels:
-    - temp 
-    - thunder 
-    -  
-    -  
+    - "" 
+    - "" 
+    - "30°C" 
+    - "Thunder" 
+    - "" 
+    - "" 
 ...

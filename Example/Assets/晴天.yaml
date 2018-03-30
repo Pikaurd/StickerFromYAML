@@ -14,15 +14,17 @@ label container:
   layout:
     align: right
     up: 100
-    left: 87
+    left: 77
     right: 0
-    down: 100
+    down: 81
 
   font size: 15
 
   labels:
-    -  
-    - temp 
-    - Clear 
-    -  
+    - "" 
+    - "" 
+    - "" 
+    - "24°C" 
+    - "Cloudy" 
+    - "" 
 ...

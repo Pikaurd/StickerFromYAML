@@ -143,6 +143,8 @@ public class StickerContainer: UIView {
     
     public func correctionAnchorPoint() -> () {
         guard lottieContainer != .none && labelContainer != .none else { return () }
+        setNeedsLayout()
+        layoutIfNeeded()
         _ = point(inside: .zero, with: .none)
         updateAnchorPoint()
     }

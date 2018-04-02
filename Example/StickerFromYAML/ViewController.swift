@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         stickerView.center = view.center
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
-        stickerView.foo()
+        stickerView.correctionAnchorPoint()
         
         
         
@@ -64,7 +64,9 @@ class ViewController: UIViewController {
 //            print(v.frame)
 //            self.view.addSubview(v)
             
-            self.stickerView.correctionAnchorPoint()
+            let v = UIView(frame: self.stickerView.visibleAreaFrame(to: self.view))
+            v.backgroundColor = .blue
+            self.view.addSubview(v)
         }
     }
     

@@ -35,6 +35,8 @@ public class StickerContainer: UIView {
     public var lottieView: LOTAnimationView? { get { return lottieContainer?.lottieView } }
     public var animationContainerView: UIView { get { return lottieContainer.animatedImageView } }
     
+    public override var frame: CGRect { didSet { correctionAnchorPoint() } }
+    
     let debugTouchableAreaView = UIView()
     
     public init() {

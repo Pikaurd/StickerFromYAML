@@ -18,20 +18,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let name = "指南针扁平风格"
-        let name = "中国"
+        let name = "指南针扁平风格"
+//        let name = "中国"
         let url = Bundle.main.url(forResource: name, withExtension: "webp")!
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
         let size = 300
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, placeholderImage: .none, interpreter: InterpreterProvider.default)
-        stickerView.debugMode = true
+//        stickerView.debugMode = true
 //        stickerView = StickerContainer(placeholderImage: #imageLiteral(resourceName: "placeholder"))
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
 //        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
         stickerView.center = view.center
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
+        stickerView.foo()
+        
+        
         
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureHandle(gesture:)))
         stickerView.addGestureRecognizer(pinchGesture)
@@ -55,11 +58,13 @@ class ViewController: UIViewController {
 //                self.stickerView.setNeedsLayout()
 //                self.stickerView.layoutIfNeeded()
 //            })
-            let v = self.stickerView.getLabelView()
-            v.frame.origin.y += 300
-            v.backgroundColor = .black
-            print(v.frame)
-            self.view.addSubview(v)
+//            let v = self.stickerView.getLabelView()
+//            v.frame.origin.y += 300
+//            v.backgroundColor = .black
+//            print(v.frame)
+//            self.view.addSubview(v)
+            
+            self.stickerView.correctionAnchorPoint()
         }
     }
     

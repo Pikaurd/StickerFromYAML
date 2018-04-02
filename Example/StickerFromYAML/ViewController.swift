@@ -58,15 +58,15 @@ class ViewController: UIViewController {
 //            print("frame: \(v.frame.size), bounds.size: \(v.bounds.size)")
 //            self.view.addSubview(v)
             
-            let v = UIView()
+            let v = self.stickerView.foo()
             
-            let oBounds = self.stickerView.animationContainerView.bounds
-            let animCenter = self.stickerView.animationContainerView.center
-            let cCenter = self.stickerView.animationContainerView.superview!.convert(animCenter, to: self.view)
-            
+//            let oBounds = self.stickerView.animationContainerView.bounds
+//            let animCenter = self.stickerView.animationContainerView.center
+//            let cCenter = self.stickerView.animationContainerView.superview!.convert(animCenter, to: self.view)
+//
             v.transform = self.stickerView.transform
-            v.center = cCenter
-            v.bounds = self.stickerView.animationContainerView.bounds
+//            v.center = cCenter
+//            v.bounds = self.stickerView.animationContainerView.bounds
             
 //            let frame = CGRect(origin: CGPoint(x: cCenter.x - oBounds.width, y: cCenter.y - oBounds.height), size: self.stickerView.animationContainerView.bounds.size)
 //            v.frame = frame

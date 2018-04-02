@@ -109,13 +109,25 @@ public class StickerContainer: UIView {
         lottieContainer.replaceAnimation(animationUrl: url, placeholderImage: .none)
     }
     
-    public func getLabelView() -> UIView {
+    public func getLabelView() -> ShrunkStickerView {
         let v = labelContainer.labelView(container: self)
         v.layer.anchorPoint = layer.anchorPoint
         v.bounds = bounds
         v.center = center
         v.transform = transform
         return v
+    }
+    
+    public func shrunkView() -> ShrunkStickerView {
+        let labelView = getLabelView()
+        
+        let imageView = labelView.imageView
+        imageView.bounds = lottieContainer.animatedImageView.bounds
+        imageView.center = lottieContainer.centerView.convert(lottieContainer.animatedImageView.center, to: self)
+        imageView.transform = lottieContainer.animatedImageView.transform
+        labelView.insertSubview(imageView, at: 0)
+        
+        return labelView
     }
     
     public override func layoutSubviews() {

@@ -63,8 +63,8 @@ class LabelContainerView: GridContainerView {
         return resultLayer
     }
     
-    func labelView(container: UIView) -> UIView {
-        let v = UIView()
+    func labelView(container: UIView) -> ShrunkStickerView {
+        let v = ShrunkStickerView()
         v.bounds = container.bounds
 
         for i in 0 ..< labels.count {

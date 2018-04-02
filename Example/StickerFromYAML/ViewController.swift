@@ -23,16 +23,17 @@ class ViewController: UIViewController {
         let url = Bundle.main.url(forResource: name, withExtension: "webp")!
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
-        let size = 300
+        let size = 100
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, placeholderImage: .none, interpreter: InterpreterProvider.default)
 //        stickerView.debugMode = true
 //        stickerView = StickerContainer(placeholderImage: #imageLiteral(resourceName: "placeholder"))
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
-//        stickerView.center = CGPoint(x: view.center.x, y: stickerView.frame.size.height * 2 + 10)
-        stickerView.center = view.center
+        stickerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).scaledBy(x: 1.1, y: 1.1)
+        stickerView.center = CGPoint(x: 300, y: 100)
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
         stickerView.correctionAnchorPoint()
+        print("stickerView.frame.size: \(stickerView.bounds.size)")
         
         
         
@@ -52,20 +53,25 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async {
             
-//            UIView.animate(withDuration: 1.0, animations: {
-//                self.stickerView.transform = CGAffineTransform(scaleX: 3, y: 3)
-//            }, completion: { _ in
-//                self.stickerView.setNeedsLayout()
-//                self.stickerView.layoutIfNeeded()
-//            })
 //            let v = self.stickerView.getLabelView()
-//            v.frame.origin.y += 300
 //            v.backgroundColor = .black
-//            print(v.frame)
+//            print("frame: \(v.frame.size), bounds.size: \(v.bounds.size)")
 //            self.view.addSubview(v)
             
-            let v = UIView(frame: self.stickerView.visibleAreaFrame(to: self.view))
-            v.backgroundColor = .blue
+            let v = UIView()
+            
+            let oBounds = self.stickerView.animationContainerView.bounds
+            let animCenter = self.stickerView.animationContainerView.center
+            let cCenter = self.stickerView.animationContainerView.superview!.convert(animCenter, to: self.view)
+            
+            v.transform = self.stickerView.transform
+            v.center = cCenter
+            v.bounds = self.stickerView.animationContainerView.bounds
+            
+//            let frame = CGRect(origin: CGPoint(x: cCenter.x - oBounds.width, y: cCenter.y - oBounds.height), size: self.stickerView.animationContainerView.bounds.size)
+//            v.frame = frame
+            
+            v.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 0.5)
             self.view.addSubview(v)
         }
     }

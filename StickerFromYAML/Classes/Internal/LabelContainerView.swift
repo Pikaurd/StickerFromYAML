@@ -65,17 +65,18 @@ class LabelContainerView: GridContainerView {
     
     func labelView(container: UIView) -> UIView {
         let v = UIView()
-        v.frame = container.frame
-        let scale = v.bounds.width / 3000  // base width is 300, and base scale is 0.1 therefore using width divide 3000
+        v.bounds = container.bounds
 
         for i in 0 ..< labels.count {
             let l = labels[i]
             let newLabel = UILabel()
-            newLabel.font = UIFont(name: "PingFangSC-Semibold", size: baseFontSize * scale * 10)
+            newLabel.font = UIFont(name: "PingFangSC-Semibold", size: baseFontSize * 10)
             newLabel.text = l.text
             newLabel.textColor = l.textColor
-            let frame = centerView.convert(l.frame, to: self)
-            newLabel.frame = frame * container.transform.xScale
+            let newLabelCenter = centerView.convert(l.center, to: self)
+            newLabel.bounds = l.bounds
+            newLabel.center = newLabelCenter
+            newLabel.transform = l.transform
             v.addSubview(newLabel)
         }
         return v

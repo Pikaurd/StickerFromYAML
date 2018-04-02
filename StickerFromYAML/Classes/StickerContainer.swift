@@ -109,18 +109,12 @@ public class StickerContainer: UIView {
         lottieContainer.replaceAnimation(animationUrl: url, placeholderImage: .none)
     }
     
-    public func getLabelLayer() -> CALayer {
-        let resultLayer = labelContainer.animationLayer()
-        resultLayer.frame = frame
-        resultLayer.setAffineTransform(transform)
-        
-        return resultLayer
-    }
-    
     public func getLabelView() -> UIView {
         let v = labelContainer.labelView(container: self)
-        v.frame = frame
-        v.transform = CGAffineTransform(rotationAngle: transform.rotation)
+        v.layer.anchorPoint = layer.anchorPoint
+        v.bounds = bounds
+        v.center = center
+        v.transform = transform
         return v
     }
     

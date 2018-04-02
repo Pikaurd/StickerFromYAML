@@ -9,7 +9,7 @@ import UIKit
 
 @objc
 public class ShrunkStickerView: UIView {
-    public let imageView = UIImageView()
+    @objc public let imageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,6 +22,7 @@ public class ShrunkStickerView: UIView {
     }
     
     private func setup() -> () {
+        imageView.contentMode = .scaleAspectFit
         addSubview(imageView)
     }
 }

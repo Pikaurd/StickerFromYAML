@@ -18,18 +18,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        view.backgroundColor = .black
+        
         let name = "指南针扁平风格"
 //        let name = "中国"
         let url = Bundle.main.url(forResource: name, withExtension: "webp")!
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
-        let size = 100
+        let size = 200
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, placeholderImage: .none, interpreter: InterpreterProvider.default)
 //        stickerView.debugMode = true
 //        stickerView = StickerContainer(placeholderImage: #imageLiteral(resourceName: "placeholder"))
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
         stickerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).scaledBy(x: 1.1, y: 1.1)
-        stickerView.center = CGPoint(x: 300, y: 100)
+//        stickerView.transform = CGAffineTransform(rotationAngle: 0).scaledBy(x: 1.2, y: 1.2)
+//        stickerView.center = CGPoint(x: 100, y: 100)
+        stickerView.center = CGPoint(x: view.center.x, y: view.center.y)
         stickerView.backgroundColor = .gray
         view.addSubview(stickerView)
         stickerView.correctionAnchorPoint()
@@ -53,26 +57,9 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async {
             
-//            let v = self.stickerView.getLabelView()
-//            v.backgroundColor = .black
-//            print("frame: \(v.frame.size), bounds.size: \(v.bounds.size)")
-//            self.view.addSubview(v)
+            let labelLayer = self.stickerView.labelLayer()!
+            self.view.layer.addSublayer(labelLayer)
             
-            let v = self.stickerView.foo()
-            
-//            let oBounds = self.stickerView.animationContainerView.bounds
-//            let animCenter = self.stickerView.animationContainerView.center
-//            let cCenter = self.stickerView.animationContainerView.superview!.convert(animCenter, to: self.view)
-//
-            v.transform = self.stickerView.transform
-//            v.center = cCenter
-//            v.bounds = self.stickerView.animationContainerView.bounds
-            
-//            let frame = CGRect(origin: CGPoint(x: cCenter.x - oBounds.width, y: cCenter.y - oBounds.height), size: self.stickerView.animationContainerView.bounds.size)
-//            v.frame = frame
-            
-            v.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 0.5)
-            self.view.addSubview(v)
         }
     }
     

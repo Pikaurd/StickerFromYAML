@@ -23,12 +23,8 @@ public class StickerContainer: UIView {
     public var isActive = false
     public var debugMode = false {
         didSet {
-            if debugMode {
-                addSubview(debugTouchableAreaView)
-            }
-            else {
-                debugTouchableAreaView.removeFromSuperview()
-            }
+            if debugMode { addSubview(debugTouchableAreaView) }
+            else { debugTouchableAreaView.removeFromSuperview() }
         }
     }
     
@@ -128,6 +124,17 @@ public class StickerContainer: UIView {
         labelView.insertSubview(imageView, at: 0)
         
         return labelView
+    }
+    
+    public func labelLayer() -> CALayer? {
+        guard let sv = superview else { return .none }
+        
+        let l = labelContainer.animationLayer()
+        l.bounds = labelContainer.centerView.bounds
+        l.position = labelContainer.middleContainerView.convert(labelContainer.centerView.layer.position, to: sv)
+        l.transform = CATransform3DMakeAffineTransform(transform)
+        
+        return l
     }
     
     public override func layoutSubviews() {

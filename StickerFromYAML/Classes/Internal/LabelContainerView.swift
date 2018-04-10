@@ -39,27 +39,29 @@ class LabelContainerView: GridContainerView {
             }
         }
         
+//        centerView.backgroundColor = .orange
     }
     
     func animationLayer() -> CALayer {
+        let scale = bounds.width / 3000
+        
         let resultLayer = CALayer()
-        resultLayer.frame = frame
+        resultLayer.contentsScale = UIScreen.main.scale
+        resultLayer.bounds = centerView.bounds
         
         for l in labels {
-            let origin = centerView.convert(l.frame.origin, to: self)
-            
             let textLayer = CATextLayer()
-            textLayer.fontSize = l.font.pointSize
+            textLayer.contentsScale = UIScreen.main.scale
+            textLayer.fontSize = l.font.pointSize * scale
             textLayer.font = l.font
-            textLayer.foregroundColor = l.textColor.cgColor
+            textLayer.foregroundColor = UIColor.white.cgColor
             textLayer.backgroundColor = UIColor.clear.cgColor
             textLayer.string = l.text
-            textLayer.frame = CGRect(origin: origin, size: l.frame.size)
+            textLayer.frame = l.frame
             
             resultLayer.addSublayer(textLayer)
         }
-        
-        
+//        resultLayer.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 1.0, alpha: 0.2).cgColor
         return resultLayer
     }
     

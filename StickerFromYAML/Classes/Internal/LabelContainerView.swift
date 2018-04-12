@@ -57,9 +57,42 @@ class LabelContainerView: GridContainerView {
             textLayer.string = l.text
             textLayer.frame = l.frame
             
+            print("fontSize: \(textLayer.fontSize)")
+            
             resultLayer.addSublayer(textLayer)
         }
 //        resultLayer.backgroundColor = UIColor(red: 1.0, green: 0.5, blue: 1.0, alpha: 0.2).cgColor
+        return resultLayer
+    }
+    
+    func foo(outterScale: CGFloat, superCoordinateContainer: UIView) -> CALayer {
+        let scale = bounds.width / 3000
+        
+        let resultLayer = CALayer()
+        resultLayer.contentsScale = UIScreen.main.scale
+        resultLayer.bounds = centerView.bounds * outterScale
+        resultLayer.position = middleContainerView.convert(centerView.layer.position, to: superCoordinateContainer)
+//        resultLayer.backgroundColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.2).cgColor
+        
+        print("centerView.bounds: \(centerView.bounds) \t converted: \(resultLayer.bounds)")
+        
+        for l in labels {
+            let size = centerView.convert(l.frame, to: superCoordinateContainer).size
+            
+            let textLayer = CATextLayer()
+            textLayer.contentsScale = UIScreen.main.scale
+            textLayer.fontSize = l.font.pointSize * scale * outterScale
+            textLayer.font = l.font
+            textLayer.foregroundColor = UIColor.white.cgColor
+            textLayer.backgroundColor = UIColor.clear.cgColor
+            textLayer.string = l.text
+            textLayer.frame = CGRect(origin: l.frame.origin * outterScale, size: size)
+            
+//            print("fontSize: \(textLayer.fontSize)\t\(textLayer.frame)")
+            
+            resultLayer.addSublayer(textLayer)
+        }
+        
         return resultLayer
     }
     

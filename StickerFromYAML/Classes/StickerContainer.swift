@@ -127,9 +127,12 @@ public class StickerContainer: UIView {
     }
     
     public func labelLayer() -> CALayer {
-        let l = labelContainer.animationLayer()
-        l.bounds = labelContainer.centerView.bounds
-        l.position = labelContainer.middleContainerView.convert(labelContainer.centerView.layer.position, to: self)
+        guard let superview = superview else { return CALayer() }
+        
+        let scale = transform.xScale
+        let textLayerOffsetY = -2 / 300 * bounds.width * scale
+        let l = labelContainer.foo(outterScale: scale, superCoordinateContainer: superview)
+        l.setAffineTransform(CGAffineTransform(rotationAngle: transform.rotation).translatedBy(x: 0, y: textLayerOffsetY))
         return l
     }
     

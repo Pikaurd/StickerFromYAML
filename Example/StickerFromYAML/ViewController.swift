@@ -25,13 +25,13 @@ class ViewController: UIViewController {
         let url = Bundle.main.url(forResource: name, withExtension: "webp")!
         let yamlURL = Bundle.main.url(forResource: name, withExtension: "yaml")!
         
-        let size = 200
+        let size = 100
         stickerView = StickerContainer(animationUrl: url, configUrl: yamlURL, placeholderImage: .none, interpreter: InterpreterProvider.default)
 //        stickerView.debugMode = true
 //        stickerView = StickerContainer(placeholderImage: #imageLiteral(resourceName: "placeholder"))
         stickerView.frame = CGRect(origin: .zero, size: CGSize(width: size, height: size))
-        stickerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).scaledBy(x: 1.1, y: 1.1)
-//        stickerView.transform = CGAffineTransform(rotationAngle: 0).scaledBy(x: 1.2, y: 1.2)
+        stickerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).scaledBy(x: 6.1, y: 6.1)
+//        stickerView.transform = CGAffineTransform(rotationAngle: .pi * 0).scaledBy(x: 4.1, y: 4.1)
 //        stickerView.center = CGPoint(x: 100, y: 100)
         stickerView.center = CGPoint(x: view.center.x, y: view.center.y)
         stickerView.backgroundColor = .gray
@@ -58,24 +58,27 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             
             let l = CALayer()
+            l.contentsScale = UIScreen.main.scale
             l.anchorPoint = self.stickerView.layer.anchorPoint
             l.bounds = self.stickerView.bounds
             l.position = self.stickerView.layer.position
-            l.backgroundColor = UIColor(white: 1.0, alpha: 0.1).cgColor
+            l.backgroundColor = UIColor(white: 0.0, alpha: 1.0).cgColor
             l.setAffineTransform(self.stickerView.transform)
             
             let il = CALayer()
             il.bounds = self.stickerView.animationContainerView.bounds
             il.position = self.stickerView.animationContainerView.layer.position
-            il.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.1).cgColor
+//            il.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.1).cgColor
             
             l.addSublayer(il)
             
             let ll = self.stickerView.labelLayer()
-            ll.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0, alpha: 0.2).cgColor
-            l.addSublayer(ll)
+            ll.contentsScale = UIScreen.main.scale
+//            ll.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0, alpha: 0.2).cgColor
             
             self.view.layer.addSublayer(l)
+            self.view.layer.addSublayer(ll)
+            
             
         }
     }

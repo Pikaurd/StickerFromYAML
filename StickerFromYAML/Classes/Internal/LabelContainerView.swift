@@ -38,8 +38,6 @@ class LabelContainerView: GridContainerView {
                 longestLabelWidth = labelWidth
             }
         }
-        
-//        centerView.backgroundColor = .orange
     }
     
     func animationLayer() -> CALayer {

@@ -57,8 +57,25 @@ class ViewController: UIViewController {
         
         DispatchQueue.main.async {
             
-            let labelLayer = self.stickerView.labelLayer()!
-            self.view.layer.addSublayer(labelLayer)
+            let l = CALayer()
+            l.anchorPoint = self.stickerView.layer.anchorPoint
+            l.bounds = self.stickerView.bounds
+            l.position = self.stickerView.layer.position
+            l.backgroundColor = UIColor(white: 1.0, alpha: 0.1).cgColor
+            l.setAffineTransform(self.stickerView.transform)
+            
+            let il = CALayer()
+            il.bounds = self.stickerView.animationContainerView.bounds
+            il.position = self.stickerView.animationContainerView.layer.position
+            il.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0.1).cgColor
+            
+            l.addSublayer(il)
+            
+            let ll = self.stickerView.labelLayer()
+            ll.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0, alpha: 0.2).cgColor
+            l.addSublayer(ll)
+            
+            self.view.layer.addSublayer(l)
             
         }
     }

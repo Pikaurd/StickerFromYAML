@@ -25,6 +25,8 @@ class AnimationContainerView: GridContainerView {
         loadingActivityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         animatedImageView.addSubview(loadingActivityIndicator)
         
+//        animatedImageView.backgroundColor = UIColor(white: 1.0, alpha: 0.1)
+        
     }
     
     override func layoutSubviews() {
@@ -38,6 +40,9 @@ class AnimationContainerView: GridContainerView {
         )
         let size = CGSize(width: centerView.bounds.width * scale, height: centerView.bounds.height * scale)
         animatedImageView.frame = CGRect(origin: origin, size: size)
+        
+        let edgeSize = min(centerView.bounds.width * scale, centerView.bounds.height * scale)
+        animatedImageView.bounds = CGRect(origin: .zero, size: CGSize(width: edgeSize, height: edgeSize))
     }
     
     func replaceAnimation(animationUrl: URL?, placeholderImage: UIImage?) -> () {

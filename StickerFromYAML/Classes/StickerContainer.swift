@@ -126,14 +126,10 @@ public class StickerContainer: UIView {
         return labelView
     }
     
-    public func labelLayer() -> CALayer? {
-        guard let sv = superview else { return .none }
-        
+    public func labelLayer() -> CALayer {
         let l = labelContainer.animationLayer()
         l.bounds = labelContainer.centerView.bounds
-        l.position = labelContainer.middleContainerView.convert(labelContainer.centerView.layer.position, to: sv)
-        l.transform = CATransform3DMakeAffineTransform(transform)
-        
+        l.position = labelContainer.middleContainerView.convert(labelContainer.centerView.layer.position, to: self)
         return l
     }
     
